@@ -1,0 +1,87 @@
+[2025-07-12T13:43:32.029+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_data_quality_check.check_data_validity scheduled__2025-07-12T00:00:00+00:00 [queued]>
+[2025-07-12T13:43:32.035+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_data_quality_check.check_data_validity scheduled__2025-07-12T00:00:00+00:00 [queued]>
+[2025-07-12T13:43:32.035+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-12T13:43:32.043+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): check_data_validity> on 2025-07-12 00:00:00+00:00
+[2025-07-12T13:43:32.046+0000] {standard_task_runner.py:60} INFO - Started process 318 to run task
+[2025-07-12T13:43:32.048+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'flight_data_quality_check', 'check_data_validity', 'scheduled__2025-07-12T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/flight_data_quality.py', '--cfg-path', '/tmp/tmprpljwttu']
+[2025-07-12T13:43:32.049+0000] {standard_task_runner.py:88} INFO - Job 10: Subtask check_data_validity
+[2025-07-12T13:43:32.071+0000] {task_command.py:423} INFO - Running <TaskInstance: flight_data_quality_check.check_data_validity scheduled__2025-07-12T00:00:00+00:00 [running]> on host d712b9c489aa
+[2025-07-12T13:43:32.256+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='flight_data_quality_check' AIRFLOW_CTX_TASK_ID='check_data_validity' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-12T00:00:00+00:00'
+[2025-07-12T13:43:32.264+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T13:43:32.266+0000] {logging_mixin.py:188} INFO - Error checking data validity: connection to server at "postgres" (172.20.0.2), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+[2025-07-12T13:43:32.266+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/flight_data_quality.py", line 119, in check_data_validity
+    duplicates = postgres_hook.get_records(duplicate_query)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 261, in get_records
+    return self.run(sql=sql, parameters=parameters, handler=fetch_all_handler)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 391, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/postgres/hooks/postgres.py", line 158, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "postgres" (172.20.0.2), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
+[2025-07-12T13:43:32.270+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=flight_data_quality_check, task_id=check_data_validity, execution_date=20250712T000000, start_date=20250712T134332, end_date=20250712T134332
+[2025-07-12T13:43:32.276+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 10 for task check_data_validity (connection to server at "postgres" (172.20.0.2), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+; 318)
+[2025-07-12T13:43:32.313+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-07-12T13:43:32.328+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-12T14:21:19.795+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_data_quality_check.check_data_validity scheduled__2025-07-12T00:00:00+00:00 [queued]>
+[2025-07-12T14:21:19.799+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_data_quality_check.check_data_validity scheduled__2025-07-12T00:00:00+00:00 [queued]>
+[2025-07-12T14:21:19.799+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-12T14:21:19.804+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): check_data_validity> on 2025-07-12 00:00:00+00:00
+[2025-07-12T14:21:19.806+0000] {standard_task_runner.py:60} INFO - Started process 329 to run task
+[2025-07-12T14:21:19.809+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'flight_data_quality_check', 'check_data_validity', 'scheduled__2025-07-12T00:00:00+00:00', '--job-id', '49', '--raw', '--subdir', 'DAGS_FOLDER/flight_data_quality.py', '--cfg-path', '/tmp/tmpy1m4r7ua']
+[2025-07-12T14:21:19.810+0000] {standard_task_runner.py:88} INFO - Job 49: Subtask check_data_validity
+[2025-07-12T14:21:19.829+0000] {task_command.py:423} INFO - Running <TaskInstance: flight_data_quality_check.check_data_validity scheduled__2025-07-12T00:00:00+00:00 [running]> on host b78d8dd28f9c
+[2025-07-12T14:21:19.946+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='flight_data_quality_check' AIRFLOW_CTX_TASK_ID='check_data_validity' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-12T00:00:00+00:00'
+[2025-07-12T14:21:19.950+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T14:21:19.952+0000] {sql.py:450} INFO - Running statement: 
+        SELECT flight_number, COUNT(*) as count
+        FROM scheduled_flights
+        GROUP BY flight_number
+        HAVING COUNT(*) > 1
+        LIMIT 10
+        , parameters: None
+[2025-07-12T14:21:19.953+0000] {sql.py:459} INFO - Rows affected: 10
+[2025-07-12T14:21:19.954+0000] {logging_mixin.py:188} INFO - WARNING: Found 10 duplicate flight numbers:
+[2025-07-12T14:21:19.954+0000] {logging_mixin.py:188} INFO -   AS7063: 2 occurrences
+[2025-07-12T14:21:19.954+0000] {logging_mixin.py:188} INFO -   F94933: 2 occurrences
+[2025-07-12T14:21:19.954+0000] {logging_mixin.py:188} INFO -   AS6983: 2 occurrences
+[2025-07-12T14:21:19.954+0000] {logging_mixin.py:188} INFO -   DL1502: 2 occurrences
+[2025-07-12T14:21:19.955+0000] {logging_mixin.py:188} INFO -   AS5412: 2 occurrences
+[2025-07-12T14:21:19.955+0000] {logging_mixin.py:188} INFO -   F93353: 2 occurrences
+[2025-07-12T14:21:19.955+0000] {logging_mixin.py:188} INFO -   AS6269: 2 occurrences
+[2025-07-12T14:21:19.955+0000] {logging_mixin.py:188} INFO -   UA2071: 2 occurrences
+[2025-07-12T14:21:19.955+0000] {logging_mixin.py:188} INFO -   AA8087: 2 occurrences
+[2025-07-12T14:21:19.956+0000] {logging_mixin.py:188} INFO -   AS7734: 2 occurrences
+[2025-07-12T14:21:19.958+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T14:21:19.960+0000] {sql.py:450} INFO - Running statement: 
+        SELECT code, latitude, longitude
+        FROM airports
+        WHERE latitude NOT BETWEEN -90 AND 90 
+           OR longitude NOT BETWEEN -180 AND 180
+        , parameters: None
+[2025-07-12T14:21:19.960+0000] {sql.py:459} INFO - Rows affected: 0
+[2025-07-12T14:21:19.960+0000] {logging_mixin.py:188} INFO - All airport coordinates are valid
+[2025-07-12T14:21:19.963+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T14:21:19.965+0000] {sql.py:450} INFO - Running statement: 
+        SELECT flight_number, origin_airport, destination_airport
+        FROM scheduled_flights
+        WHERE origin_airport = destination_airport
+        LIMIT 5
+        , parameters: None
+[2025-07-12T14:21:19.965+0000] {sql.py:459} INFO - Rows affected: 0
+[2025-07-12T14:21:19.966+0000] {logging_mixin.py:188} INFO - No flights with same origin and destination found
+[2025-07-12T14:21:19.966+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-07-12T14:21:19.969+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=flight_data_quality_check, task_id=check_data_validity, execution_date=20250712T000000, start_date=20250712T142119, end_date=20250712T142119
+[2025-07-12T14:21:19.992+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-12T14:21:20.007+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

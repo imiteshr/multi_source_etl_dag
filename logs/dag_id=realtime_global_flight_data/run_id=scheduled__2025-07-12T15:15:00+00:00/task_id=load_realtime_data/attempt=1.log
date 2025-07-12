@@ -1,0 +1,76 @@
+[2025-07-12T15:39:12.590+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: realtime_global_flight_data.load_realtime_data scheduled__2025-07-12T15:15:00+00:00 [queued]>
+[2025-07-12T15:39:12.595+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: realtime_global_flight_data.load_realtime_data scheduled__2025-07-12T15:15:00+00:00 [queued]>
+[2025-07-12T15:39:12.595+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-07-12T15:39:12.601+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_realtime_data> on 2025-07-12 15:15:00+00:00
+[2025-07-12T15:39:12.604+0000] {standard_task_runner.py:60} INFO - Started process 2263 to run task
+[2025-07-12T15:39:12.605+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'realtime_global_flight_data', 'load_realtime_data', 'scheduled__2025-07-12T15:15:00+00:00', '--job-id', '111', '--raw', '--subdir', 'DAGS_FOLDER/realtime_global_flight_data.py', '--cfg-path', '/tmp/tmpwjcbmqb7']
+[2025-07-12T15:39:12.607+0000] {standard_task_runner.py:88} INFO - Job 111: Subtask load_realtime_data
+[2025-07-12T15:39:12.632+0000] {task_command.py:423} INFO - Running <TaskInstance: realtime_global_flight_data.load_realtime_data scheduled__2025-07-12T15:15:00+00:00 [running]> on host f1b3ce86e5d1
+[2025-07-12T15:39:12.743+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='realtime_global_flight_data' AIRFLOW_CTX_TASK_ID='load_realtime_data' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T15:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-12T15:15:00+00:00'
+[2025-07-12T15:39:12.743+0000] {logging_mixin.py:188} INFO - 📥 Loading real-time flight data to database...
+[2025-07-12T15:39:12.770+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:39:16.891+0000] {logging_mixin.py:188} INFO - ✅ Loaded 11828 real-time flights to database
+[2025-07-12T15:39:16.908+0000] {logging_mixin.py:188} INFO - ❌ Error loading data to database: (psycopg2.ProgrammingError) can't adapt type 'dict'
+[SQL: INSERT INTO realtime_flight_metadata (table_name, record_count, data_sources, last_updated, data_quality_avg) VALUES (%(table_name)s, %(record_count)s, %(data_sources)s, %(last_updated)s, %(data_quality_avg)s)]
+[parameters: {'table_name': 'realtime_global_flights', 'record_count': 11828, 'data_sources': {'opensky': 11828}, 'last_updated': '2025-07-12T15:39:16.895173', 'data_quality_avg': 98.58640514034495}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2025-07-12T15:39:16.909+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.ProgrammingError: can't adapt type 'dict'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/realtime_global_flight_data.py", line 530, in load_realtime_data
+    metadata_df.to_sql(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/generic.py", line 2987, in to_sql
+    return sql.to_sql(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 695, in to_sql
+    return pandas_sql.to_sql(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 1738, in to_sql
+    total_inserted = sql_engine.insert_records(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 1335, in insert_records
+    raise err
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 1325, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 946, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 853, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1385, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) can't adapt type 'dict'
+[SQL: INSERT INTO realtime_flight_metadata (table_name, record_count, data_sources, last_updated, data_quality_avg) VALUES (%(table_name)s, %(record_count)s, %(data_sources)s, %(last_updated)s, %(data_quality_avg)s)]
+[parameters: {'table_name': 'realtime_global_flights', 'record_count': 11828, 'data_sources': {'opensky': 11828}, 'last_updated': '2025-07-12T15:39:16.895173', 'data_quality_avg': 98.58640514034495}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2025-07-12T15:39:16.920+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=realtime_global_flight_data, task_id=load_realtime_data, execution_date=20250712T151500, start_date=20250712T153912, end_date=20250712T153916
+[2025-07-12T15:39:16.926+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 111 for task load_realtime_data ((psycopg2.ProgrammingError) can't adapt type 'dict'
+[SQL: INSERT INTO realtime_flight_metadata (table_name, record_count, data_sources, last_updated, data_quality_avg) VALUES (%(table_name)s, %(record_count)s, %(data_sources)s, %(last_updated)s, %(data_quality_avg)s)]
+[parameters: {'table_name': 'realtime_global_flights', 'record_count': 11828, 'data_sources': {'opensky': 11828}, 'last_updated': '2025-07-12T15:39:16.895173', 'data_quality_avg': 98.58640514034495}]
+(Background on this error at: https://sqlalche.me/e/14/f405); 2263)
+[2025-07-12T15:39:16.981+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-07-12T15:39:17.116+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

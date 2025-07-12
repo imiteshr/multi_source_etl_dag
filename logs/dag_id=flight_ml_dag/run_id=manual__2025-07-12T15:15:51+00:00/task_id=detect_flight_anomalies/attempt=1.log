@@ -1,0 +1,19 @@
+[2025-07-12T15:15:53.258+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_ml_dag.detect_flight_anomalies manual__2025-07-12T15:15:51+00:00 [queued]>
+[2025-07-12T15:15:53.262+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_ml_dag.detect_flight_anomalies manual__2025-07-12T15:15:51+00:00 [queued]>
+[2025-07-12T15:15:53.262+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-12T15:15:53.267+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): detect_flight_anomalies> on 2025-07-12 15:15:51+00:00
+[2025-07-12T15:15:53.270+0000] {standard_task_runner.py:60} INFO - Started process 433 to run task
+[2025-07-12T15:15:53.272+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'flight_ml_dag', 'detect_flight_anomalies', 'manual__2025-07-12T15:15:51+00:00', '--job-id', '89', '--raw', '--subdir', 'DAGS_FOLDER/flight_ml_dag.py', '--cfg-path', '/tmp/tmpjvzc66jc']
+[2025-07-12T15:15:53.273+0000] {standard_task_runner.py:88} INFO - Job 89: Subtask detect_flight_anomalies
+[2025-07-12T15:15:53.294+0000] {task_command.py:423} INFO - Running <TaskInstance: flight_ml_dag.detect_flight_anomalies manual__2025-07-12T15:15:51+00:00 [running]> on host f1b3ce86e5d1
+[2025-07-12T15:15:53.324+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_scientist' AIRFLOW_CTX_DAG_ID='flight_ml_dag' AIRFLOW_CTX_TASK_ID='detect_flight_anomalies' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T15:15:51+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-12T15:15:51+00:00'
+[2025-07-12T15:15:53.329+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:15:53.349+0000] {logging_mixin.py:188} INFO - ✅ Anomaly detection completed
+[2025-07-12T15:15:53.349+0000] {logging_mixin.py:188} INFO - 🚨 Total anomalies found: 99
+[2025-07-12T15:15:53.350+0000] {logging_mixin.py:188} INFO - ⏱️ Duration anomalies: 5
+[2025-07-12T15:15:53.350+0000] {logging_mixin.py:188} INFO - 📅 Scheduling anomalies: 86
+[2025-07-12T15:15:53.350+0000] {logging_mixin.py:188} INFO - 📊 Performance anomalies: 8
+[2025-07-12T15:15:53.350+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-07-12T15:15:53.354+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=flight_ml_dag, task_id=detect_flight_anomalies, execution_date=20250712T151551, start_date=20250712T151553, end_date=20250712T151553
+[2025-07-12T15:15:53.370+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-12T15:15:53.380+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

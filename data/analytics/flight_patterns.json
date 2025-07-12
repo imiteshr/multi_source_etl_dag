@@ -1,0 +1,153 @@
+{
+  "hourly_patterns": [
+    {
+      "departure_hour": 0.0,
+      "flight_count": 52,
+      "avg_duration": 263.9423076923077,
+      "airlines_operating": 42
+    },
+    {
+      "departure_hour": 6.0,
+      "flight_count": 55,
+      "avg_duration": 243.27272727272728,
+      "airlines_operating": 43
+    },
+    {
+      "departure_hour": 7.0,
+      "flight_count": 54,
+      "avg_duration": 245.0,
+      "airlines_operating": 44
+    },
+    {
+      "departure_hour": 8.0,
+      "flight_count": 51,
+      "avg_duration": 225.58823529411765,
+      "airlines_operating": 44
+    },
+    {
+      "departure_hour": 9.0,
+      "flight_count": 57,
+      "avg_duration": 232.6315789473684,
+      "airlines_operating": 40
+    },
+    {
+      "departure_hour": 10.0,
+      "flight_count": 38,
+      "avg_duration": 253.81578947368422,
+      "airlines_operating": 35
+    },
+    {
+      "departure_hour": 11.0,
+      "flight_count": 54,
+      "avg_duration": 257.5,
+      "airlines_operating": 42
+    },
+    {
+      "departure_hour": 12.0,
+      "flight_count": 60,
+      "avg_duration": 204.75,
+      "airlines_operating": 48
+    },
+    {
+      "departure_hour": 13.0,
+      "flight_count": 44,
+      "avg_duration": 218.86363636363637,
+      "airlines_operating": 39
+    },
+    {
+      "departure_hour": 14.0,
+      "flight_count": 54,
+      "avg_duration": 215.55555555555554,
+      "airlines_operating": 46
+    },
+    {
+      "departure_hour": 15.0,
+      "flight_count": 55,
+      "avg_duration": 225.27272727272728,
+      "airlines_operating": 46
+    },
+    {
+      "departure_hour": 16.0,
+      "flight_count": 49,
+      "avg_duration": 224.3877551020408,
+      "airlines_operating": 38
+    },
+    {
+      "departure_hour": 17.0,
+      "flight_count": 50,
+      "avg_duration": 228.6,
+      "airlines_operating": 39
+    },
+    {
+      "departure_hour": 18.0,
+      "flight_count": 56,
+      "avg_duration": 229.01785714285714,
+      "airlines_operating": 45
+    },
+    {
+      "departure_hour": 19.0,
+      "flight_count": 56,
+      "avg_duration": 222.32142857142858,
+      "airlines_operating": 43
+    },
+    {
+      "departure_hour": 20.0,
+      "flight_count": 54,
+      "avg_duration": 233.05555555555554,
+      "airlines_operating": 45
+    },
+    {
+      "departure_hour": 21.0,
+      "flight_count": 58,
+      "avg_duration": 244.91379310344828,
+      "airlines_operating": 47
+    },
+    {
+      "departure_hour": 22.0,
+      "flight_count": 50,
+      "avg_duration": 221.1,
+      "airlines_operating": 42
+    },
+    {
+      "departure_hour": 23.0,
+      "flight_count": 53,
+      "avg_duration": 247.0754716981132,
+      "airlines_operating": 46
+    }
+  ],
+  "aircraft_usage": [
+    {
+      "aircraft_type": "B787",
+      "flight_count": 220,
+      "avg_duration": 234.95454545454547,
+      "airlines_using": 90
+    },
+    {
+      "aircraft_type": "A350",
+      "flight_count": 212,
+      "avg_duration": 230.5188679245283,
+      "airlines_using": 93
+    },
+    {
+      "aircraft_type": "B737",
+      "flight_count": 200,
+      "avg_duration": 224.25,
+      "airlines_using": 95
+    },
+    {
+      "aircraft_type": "B777",
+      "flight_count": 191,
+      "avg_duration": 239.21465968586386,
+      "airlines_using": 90
+    },
+    {
+      "aircraft_type": "A320",
+      "flight_count": 177,
+      "avg_duration": 238.05084745762713,
+      "airlines_using": 90
+    }
+  ],
+  "peak_hour": 12,
+  "most_used_aircraft": "B787",
+  "analysis_timestamp": "2025-07-12T15:51:33.848164"
+}

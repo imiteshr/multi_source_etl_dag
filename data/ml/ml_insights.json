@@ -1,0 +1,21 @@
+{
+  "ml_pipeline_status": "active",
+  "models_trained": [
+    {
+      "model_type": "delay_prediction",
+      "accuracy": 0.465,
+      "features_count": 9
+    }
+  ],
+  "key_insights": [
+    "Most important factor for delays: origin_airport",
+    "Found 179 anomalies in recent flight data"
+  ],
+  "recommendations": [
+    "Investigate airline performance issues - some carriers showing high delay rates",
+    "Continue monitoring flight patterns for seasonal trends",
+    "Consider weather data integration for improved delay prediction",
+    "Implement real-time alerting for critical anomalies"
+  ],
+  "generated_at": "2025-07-12T15:51:45.930079"
+}

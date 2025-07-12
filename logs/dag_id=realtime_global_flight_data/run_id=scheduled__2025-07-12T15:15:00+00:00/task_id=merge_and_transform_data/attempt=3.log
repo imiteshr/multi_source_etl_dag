@@ -1,0 +1,24 @@
+[2025-07-12T15:39:11.547+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: realtime_global_flight_data.merge_and_transform_data scheduled__2025-07-12T15:15:00+00:00 [queued]>
+[2025-07-12T15:39:11.552+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: realtime_global_flight_data.merge_and_transform_data scheduled__2025-07-12T15:15:00+00:00 [queued]>
+[2025-07-12T15:39:11.553+0000] {taskinstance.py:2170} INFO - Starting attempt 3 of 3
+[2025-07-12T15:39:11.559+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): merge_and_transform_data> on 2025-07-12 15:15:00+00:00
+[2025-07-12T15:39:11.562+0000] {standard_task_runner.py:60} INFO - Started process 2260 to run task
+[2025-07-12T15:39:11.564+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'realtime_global_flight_data', 'merge_and_transform_data', 'scheduled__2025-07-12T15:15:00+00:00', '--job-id', '110', '--raw', '--subdir', 'DAGS_FOLDER/realtime_global_flight_data.py', '--cfg-path', '/tmp/tmpef78neer']
+[2025-07-12T15:39:11.566+0000] {standard_task_runner.py:88} INFO - Job 110: Subtask merge_and_transform_data
+[2025-07-12T15:39:11.593+0000] {task_command.py:423} INFO - Running <TaskInstance: realtime_global_flight_data.merge_and_transform_data scheduled__2025-07-12T15:15:00+00:00 [running]> on host f1b3ce86e5d1
+[2025-07-12T15:39:11.788+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='realtime_global_flight_data' AIRFLOW_CTX_TASK_ID='merge_and_transform_data' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T15:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-12T15:15:00+00:00'
+[2025-07-12T15:39:11.789+0000] {logging_mixin.py:188} INFO - 🔄 Merging and transforming data from all sources...
+[2025-07-12T15:39:11.816+0000] {logging_mixin.py:188} INFO - ✅ Loaded 11828 records from opensky
+[2025-07-12T15:39:11.817+0000] {logging_mixin.py:188} INFO - ❌ Error reading aviationstack data: No columns to parse from file
+[2025-07-12T15:39:11.817+0000] {logging_mixin.py:188} INFO - ❌ Error reading airlabs data: No columns to parse from file
+[2025-07-12T15:39:11.842+0000] {logging_mixin.py:188} INFO - 🔄 Removed 0 duplicate flights
+[2025-07-12T15:39:11.975+0000] {logging_mixin.py:188} INFO - ✅ Merged data summary:
+[2025-07-12T15:39:11.975+0000] {logging_mixin.py:188} INFO -    📊 Total flights: 11828
+[2025-07-12T15:39:11.976+0000] {logging_mixin.py:188} INFO -    🌍 Countries: 115
+[2025-07-12T15:39:11.976+0000] {logging_mixin.py:188} INFO -    🏢 Airlines: 1
+[2025-07-12T15:39:11.977+0000] {logging_mixin.py:188} INFO -    📡 Data sources: {'opensky': 11828}
+[2025-07-12T15:39:11.977+0000] {logging_mixin.py:188} INFO -    🌐 Regions: {'North America': 6955, 'Europe': 3767, 'Asia': 397, 'Other': 282, 'Africa': 206, 'South America': 201, 'Oceania': 20}
+[2025-07-12T15:39:11.978+0000] {python.py:201} INFO - Done. Returned value was: /opt/***/data/merged_realtime_flights.csv
+[2025-07-12T15:39:11.987+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=realtime_global_flight_data, task_id=merge_and_transform_data, execution_date=20250712T151500, start_date=20250712T153911, end_date=20250712T153911
+[2025-07-12T15:39:12.013+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-12T15:39:12.097+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

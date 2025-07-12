@@ -1,0 +1,27 @@
+[2025-07-12T15:50:19.660+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_data_quality_check.check_data_freshness manual__2025-07-12T15:50:19.294608+00:00 [queued]>
+[2025-07-12T15:50:19.664+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_data_quality_check.check_data_freshness manual__2025-07-12T15:50:19.294608+00:00 [queued]>
+[2025-07-12T15:50:19.664+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-12T15:50:19.670+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): check_data_freshness> on 2025-07-12 15:50:19.294608+00:00
+[2025-07-12T15:50:19.673+0000] {standard_task_runner.py:60} INFO - Started process 1096 to run task
+[2025-07-12T15:50:19.675+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'flight_data_quality_check', 'check_data_freshness', 'manual__2025-07-12T15:50:19.294608+00:00', '--job-id', '125', '--raw', '--subdir', 'DAGS_FOLDER/flight_data_quality.py', '--cfg-path', '/tmp/tmpps03k471']
+[2025-07-12T15:50:19.676+0000] {standard_task_runner.py:88} INFO - Job 125: Subtask check_data_freshness
+[2025-07-12T15:50:19.697+0000] {task_command.py:423} INFO - Running <TaskInstance: flight_data_quality_check.check_data_freshness manual__2025-07-12T15:50:19.294608+00:00 [running]> on host f1b3ce86e5d1
+[2025-07-12T15:50:19.826+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='flight_data_quality_check' AIRFLOW_CTX_TASK_ID='check_data_freshness' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T15:50:19.294608+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-12T15:50:19.294608+00:00'
+[2025-07-12T15:50:19.831+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:50:19.833+0000] {sql.py:450} INFO - Running statement: 
+        SELECT COUNT(*) as count, MAX(extraction_date) as latest_date 
+        FROM airports
+        , parameters: None
+[2025-07-12T15:50:19.834+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-07-12T15:50:19.837+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:50:19.838+0000] {sql.py:450} INFO - Running statement: 
+        SELECT COUNT(*) as count, MAX(extraction_date) as latest_date 
+        FROM scheduled_flights
+        , parameters: None
+[2025-07-12T15:50:19.839+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-07-12T15:50:19.839+0000] {logging_mixin.py:188} INFO - Airports: 81 records, latest: 2025-07-12
+[2025-07-12T15:50:19.839+0000] {logging_mixin.py:188} INFO - Scheduled flights: 1000 records, latest: 2025-07-12
+[2025-07-12T15:50:19.840+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-07-12T15:50:19.844+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=flight_data_quality_check, task_id=check_data_freshness, execution_date=20250712T155019, start_date=20250712T155019, end_date=20250712T155019
+[2025-07-12T15:50:19.857+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-12T15:50:19.868+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

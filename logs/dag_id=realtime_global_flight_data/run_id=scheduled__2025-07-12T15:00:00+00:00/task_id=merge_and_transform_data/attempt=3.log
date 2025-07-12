@@ -1,0 +1,47 @@
+[2025-07-12T15:36:10.431+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: realtime_global_flight_data.merge_and_transform_data scheduled__2025-07-12T15:00:00+00:00 [queued]>
+[2025-07-12T15:36:10.434+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: realtime_global_flight_data.merge_and_transform_data scheduled__2025-07-12T15:00:00+00:00 [queued]>
+[2025-07-12T15:36:10.434+0000] {taskinstance.py:2170} INFO - Starting attempt 3 of 3
+[2025-07-12T15:36:10.439+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): merge_and_transform_data> on 2025-07-12 15:00:00+00:00
+[2025-07-12T15:36:10.443+0000] {standard_task_runner.py:60} INFO - Started process 2011 to run task
+[2025-07-12T15:36:10.444+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'realtime_global_flight_data', 'merge_and_transform_data', 'scheduled__2025-07-12T15:00:00+00:00', '--job-id', '108', '--raw', '--subdir', 'DAGS_FOLDER/realtime_global_flight_data.py', '--cfg-path', '/tmp/tmpjijlxooj']
+[2025-07-12T15:36:10.445+0000] {standard_task_runner.py:88} INFO - Job 108: Subtask merge_and_transform_data
+[2025-07-12T15:36:10.464+0000] {task_command.py:423} INFO - Running <TaskInstance: realtime_global_flight_data.merge_and_transform_data scheduled__2025-07-12T15:00:00+00:00 [running]> on host f1b3ce86e5d1
+[2025-07-12T15:36:10.597+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='realtime_global_flight_data' AIRFLOW_CTX_TASK_ID='merge_and_transform_data' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T15:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-12T15:00:00+00:00'
+[2025-07-12T15:36:10.597+0000] {logging_mixin.py:188} INFO - 🔄 Merging and transforming data from all sources...
+[2025-07-12T15:36:10.625+0000] {logging_mixin.py:188} INFO - ✅ Loaded 11828 records from opensky
+[2025-07-12T15:36:10.626+0000] {logging_mixin.py:188} INFO - ❌ Error reading aviationstack data: No columns to parse from file
+[2025-07-12T15:36:10.626+0000] {logging_mixin.py:188} INFO - ❌ Error reading airlabs data: No columns to parse from file
+[2025-07-12T15:36:10.635+0000] {logging_mixin.py:188} INFO - 🔄 Removed 0 duplicate flights
+[2025-07-12T15:36:10.766+0000] {logging_mixin.py:188} INFO - ❌ Error merging data: 'airline'
+[2025-07-12T15:36:10.767+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 165, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5745, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5753, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'airline'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/realtime_global_flight_data.py", line 388, in merge_and_transform_data
+    summary = generate_data_summary(merged_df)
+  File "/opt/airflow/dags/realtime_global_flight_data.py", line 465, in generate_data_summary
+    'airlines': len(df['airline'].unique()),
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 3807, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 3804, in get_loc
+    raise KeyError(key) from err
+KeyError: 'airline'
+[2025-07-12T15:36:10.772+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=realtime_global_flight_data, task_id=merge_and_transform_data, execution_date=20250712T150000, start_date=20250712T153610, end_date=20250712T153610
+[2025-07-12T15:36:10.777+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 108 for task merge_and_transform_data ('airline'; 2011)
+[2025-07-12T15:36:10.792+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-07-12T15:36:10.868+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

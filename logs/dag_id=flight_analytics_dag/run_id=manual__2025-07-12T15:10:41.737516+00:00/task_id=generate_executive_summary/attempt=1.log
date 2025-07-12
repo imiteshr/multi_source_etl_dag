@@ -1,0 +1,45 @@
+[2025-07-12T15:10:42.796+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_analytics_dag.generate_executive_summary manual__2025-07-12T15:10:41.737516+00:00 [queued]>
+[2025-07-12T15:10:42.800+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_analytics_dag.generate_executive_summary manual__2025-07-12T15:10:41.737516+00:00 [queued]>
+[2025-07-12T15:10:42.800+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-12T15:10:42.805+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): generate_executive_summary> on 2025-07-12 15:10:41.737516+00:00
+[2025-07-12T15:10:42.807+0000] {standard_task_runner.py:60} INFO - Started process 743 to run task
+[2025-07-12T15:10:42.809+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'flight_analytics_dag', 'generate_executive_summary', 'manual__2025-07-12T15:10:41.737516+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/flight_analytics_dag.py', '--cfg-path', '/tmp/tmpnqh9h4cg']
+[2025-07-12T15:10:42.810+0000] {standard_task_runner.py:88} INFO - Job 73: Subtask generate_executive_summary
+[2025-07-12T15:10:42.826+0000] {task_command.py:423} INFO - Running <TaskInstance: flight_analytics_dag.generate_executive_summary manual__2025-07-12T15:10:41.737516+00:00 [running]> on host b33104088b45
+[2025-07-12T15:10:42.938+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='flight_analytics_dag' AIRFLOW_CTX_TASK_ID='generate_executive_summary' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T15:10:41.737516+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-12T15:10:41.737516+00:00'
+[2025-07-12T15:10:42.943+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:10:42.944+0000] {sql.py:450} INFO - Running statement: 
+        SELECT 
+            COUNT(*) as total_flights,
+            COUNT(DISTINCT airline) as total_airlines,
+            COUNT(DISTINCT origin_airport) as origin_airports,
+            COUNT(DISTINCT destination_airport) as destination_airports,
+            COUNT(DISTINCT aircraft_type) as aircraft_types,
+            AVG(flight_duration_minutes) as avg_flight_duration,
+            MIN(scheduled_departure::timestamp) as earliest_flight,
+            MAX(scheduled_departure::timestamp) as latest_flight
+        FROM scheduled_flights
+        WHERE scheduled_departure IS NOT NULL;
+        , parameters: None
+[2025-07-12T15:10:42.945+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-07-12T15:10:42.948+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:10:42.949+0000] {sql.py:450} INFO - Running statement: SELECT COUNT(*) FROM realtime_flights;, parameters: None
+[2025-07-12T15:10:42.951+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-07-12T15:10:42.953+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:10:42.954+0000] {sql.py:450} INFO - Running statement: SELECT COUNT(*) FROM realtime_flights;, parameters: None
+[2025-07-12T15:10:42.955+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-07-12T15:10:42.957+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:10:42.958+0000] {sql.py:450} INFO - Running statement: SELECT COUNT(*) FROM airports;, parameters: None
+[2025-07-12T15:10:42.958+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-07-12T15:10:42.960+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:10:42.961+0000] {sql.py:450} INFO - Running statement: SELECT COUNT(*) FROM airports;, parameters: None
+[2025-07-12T15:10:42.962+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-07-12T15:10:42.963+0000] {logging_mixin.py:188} INFO - ✅ Executive Summary Generated
+[2025-07-12T15:10:42.963+0000] {logging_mixin.py:188} INFO - 📊 Total Flights: 1000
+[2025-07-12T15:10:42.963+0000] {logging_mixin.py:188} INFO - ✈️ Airlines: 8
+[2025-07-12T15:10:42.963+0000] {logging_mixin.py:188} INFO - 🏢 Airports: 10
+[2025-07-12T15:10:42.963+0000] {logging_mixin.py:188} INFO - ⏱️ Avg Flight Duration: 3.86 hours
+[2025-07-12T15:10:42.964+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-07-12T15:10:42.967+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=flight_analytics_dag, task_id=generate_executive_summary, execution_date=20250712T151041, start_date=20250712T151042, end_date=20250712T151042
+[2025-07-12T15:10:42.993+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-12T15:10:43.002+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

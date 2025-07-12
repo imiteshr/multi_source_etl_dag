@@ -1,0 +1,17 @@
+[2025-07-12T15:16:52.814+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_ml_dag.generate_ml_insights manual__2025-07-12T15:11:48.823661+00:00 [queued]>
+[2025-07-12T15:16:52.817+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_ml_dag.generate_ml_insights manual__2025-07-12T15:11:48.823661+00:00 [queued]>
+[2025-07-12T15:16:52.817+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-12T15:16:52.822+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): generate_ml_insights> on 2025-07-12 15:11:48.823661+00:00
+[2025-07-12T15:16:52.825+0000] {standard_task_runner.py:60} INFO - Started process 567 to run task
+[2025-07-12T15:16:52.826+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'flight_ml_dag', 'generate_ml_insights', 'manual__2025-07-12T15:11:48.823661+00:00', '--job-id', '95', '--raw', '--subdir', 'DAGS_FOLDER/flight_ml_dag.py', '--cfg-path', '/tmp/tmp80hacsml']
+[2025-07-12T15:16:52.827+0000] {standard_task_runner.py:88} INFO - Job 95: Subtask generate_ml_insights
+[2025-07-12T15:16:52.842+0000] {task_command.py:423} INFO - Running <TaskInstance: flight_ml_dag.generate_ml_insights manual__2025-07-12T15:11:48.823661+00:00 [running]> on host f1b3ce86e5d1
+[2025-07-12T15:16:52.865+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_scientist' AIRFLOW_CTX_DAG_ID='flight_ml_dag' AIRFLOW_CTX_TASK_ID='generate_ml_insights' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T15:11:48.823661+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-12T15:11:48.823661+00:00'
+[2025-07-12T15:16:52.866+0000] {logging_mixin.py:188} INFO - ✅ ML insights generated
+[2025-07-12T15:16:52.867+0000] {logging_mixin.py:188} INFO - 🧠 Models trained: 1
+[2025-07-12T15:16:52.867+0000] {logging_mixin.py:188} INFO - 💡 Key insights: 2
+[2025-07-12T15:16:52.867+0000] {logging_mixin.py:188} INFO - 📋 Recommendations: 4
+[2025-07-12T15:16:52.867+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-07-12T15:16:52.870+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=flight_ml_dag, task_id=generate_ml_insights, execution_date=20250712T151148, start_date=20250712T151652, end_date=20250712T151652
+[2025-07-12T15:16:52.886+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-12T15:16:52.891+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

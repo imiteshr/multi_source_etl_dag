@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Analytics Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .analytics-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .analytics-card h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .route-item, .airline-item, .pattern-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .route-item:last-child, .airline-item:last-child, .pattern-item:last-child {
+            border-bottom: none;
+        }
+
+        .route-name, .airline-name, .pattern-name {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .route-stats, .airline-stats, .pattern-stats {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-good { background-color: #4CAF50; }
+        .status-warning { background-color: #FF9800; }
+        .status-error { background-color: #F44336; }
+
+        .refresh-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .timestamp {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+
+        .no-data {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✈️ Flight Analytics Dashboard</h1>
+            <p>Real-time insights from multi-source flight data</p>
+        </div>
+
+        <!-- Key Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">{{ (executive_summary.data_overview.total_scheduled_flights if executive_summary.data_overview else 0) or 0 }}</div>
+                <div class="stat-label">Total Flights</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ (executive_summary.data_overview.unique_airlines if executive_summary.data_overview else 0) or 0 }}</div>
+                <div class="stat-label">Airlines</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ (executive_summary.data_overview.total_airports_in_system if executive_summary.data_overview else 0) or 0 }}</div>
+                <div class="stat-label">Airports</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ (executive_summary.operational_metrics.average_flight_duration_hours if executive_summary.operational_metrics else 0) or 0 }}</div>
+                <div class="stat-label">Avg Flight Hours</div>
+            </div>
+        </div>
+
+        <!-- Analytics Cards -->
+        <div class="analytics-grid">
+            <!-- Top Routes -->
+            <div class="analytics-card">
+                <h3>🛫 Top Flight Routes</h3>
+                {% if airport_traffic.top_routes %}
+                    {% for route in airport_traffic.top_routes[:5] %}
+                    <div class="route-item">
+                        <div class="route-name">{{ route.origin_airport }} → {{ route.destination_airport }}</div>
+                        <div class="route-stats">{{ route.flight_count }} flights</div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="no-data">No route data available</div>
+                {% endif %}
+            </div>
+
+            <!-- Airline Performance -->
+            <div class="analytics-card">
+                <h3>🏢 Airline Performance</h3>
+                {% if airline_performance.airline_performance %}
+                    {% for airline in airline_performance.airline_performance[:5] %}
+                    <div class="airline-item">
+                        <div class="airline-name">
+                            <span class="status-indicator {% if airline.on_time_percentage > 80 %}status-good{% elif airline.on_time_percentage > 60 %}status-warning{% else %}status-error{% endif %}"></span>
+                            {{ airline.airline }}
+                        </div>
+                        <div class="airline-stats">{{ airline.on_time_percentage }}% on-time</div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="no-data">No airline data available</div>
+                {% endif %}
+            </div>
+
+            <!-- Flight Patterns -->
+            <div class="analytics-card">
+                <h3>📊 Flight Patterns</h3>
+                {% if flight_patterns.hourly_patterns %}
+                    <div class="pattern-item">
+                        <div class="pattern-name">Peak Hour</div>
+                        <div class="pattern-stats">{{ flight_patterns.peak_hour or 'N/A' }}:00</div>
+                    </div>
+                    <div class="pattern-item">
+                        <div class="pattern-name">Most Used Aircraft</div>
+                        <div class="pattern-stats">{{ flight_patterns.most_used_aircraft or 'N/A' }}</div>
+                    </div>
+                    {% for pattern in flight_patterns.hourly_patterns[:3] %}
+                    <div class="pattern-item">
+                        <div class="pattern-name">{{ pattern.departure_hour }}:00</div>
+                        <div class="pattern-stats">{{ pattern.flight_count }} flights</div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="no-data">No pattern data available</div>
+                {% endif %}
+            </div>
+
+            <!-- System Status -->
+            <div class="analytics-card">
+                <h3>🔧 System Status</h3>
+                <div class="pattern-item">
+                    <div class="pattern-name">
+                        <span class="status-indicator {% if executive_summary.data_quality and executive_summary.data_quality.scheduled_flights_completeness == 'Good' %}status-good{% else %}status-error{% endif %}"></span>
+                        Flight Data
+                    </div>
+                    <div class="pattern-stats">{{ (executive_summary.data_quality.scheduled_flights_completeness if executive_summary.data_quality else 'Unknown') or 'Unknown' }}</div>
+                </div>
+                <div class="pattern-item">
+                    <div class="pattern-name">
+                        <span class="status-indicator {% if executive_summary.data_quality and executive_summary.data_quality.airport_data_coverage == 'Complete' %}status-good{% else %}status-warning{% endif %}"></span>
+                        Airport Data
+                    </div>
+                    <div class="pattern-stats">{{ (executive_summary.data_quality.airport_data_coverage if executive_summary.data_quality else 'Unknown') or 'Unknown' }}</div>
+                </div>
+                <div class="pattern-item">
+                    <div class="pattern-name">
+                        <span class="status-indicator {% if executive_summary.pipeline_status == 'Operational' %}status-good{% else %}status-error{% endif %}"></span>
+                        Pipeline Status
+                    </div>
+                    <div class="pattern-stats">{{ executive_summary.pipeline_status or 'Unknown' }}</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="refresh-btn" onclick="location.reload()">🔄 Refresh Data</button>
+
+        <div class="timestamp">
+            Last updated: {{ executive_summary.generated_at or 'Never' }}
+        </div>
+    </div>
+
+    <script>
+        // Auto-refresh every 5 minutes
+        setTimeout(function() {
+            location.reload();
+        }, 300000);
+
+        // Add some interactivity
+        document.querySelectorAll('.stat-card, .analytics-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html> 

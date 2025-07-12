@@ -1,0 +1,108 @@
+[2025-07-12T15:07:31.180+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_ml_dag.prepare_ml_data scheduled__2025-07-11T00:00:00+00:00 [queued]>
+[2025-07-12T15:07:31.183+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_ml_dag.prepare_ml_data scheduled__2025-07-11T00:00:00+00:00 [queued]>
+[2025-07-12T15:07:31.183+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-12T15:07:31.189+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): prepare_ml_data> on 2025-07-11 00:00:00+00:00
+[2025-07-12T15:07:31.193+0000] {standard_task_runner.py:60} INFO - Started process 443 to run task
+[2025-07-12T15:07:31.195+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'flight_ml_dag', 'prepare_ml_data', 'scheduled__2025-07-11T00:00:00+00:00', '--job-id', '63', '--raw', '--subdir', 'DAGS_FOLDER/flight_ml_dag.py', '--cfg-path', '/tmp/tmp3cnmgjku']
+[2025-07-12T15:07:31.196+0000] {standard_task_runner.py:88} INFO - Job 63: Subtask prepare_ml_data
+[2025-07-12T15:07:31.218+0000] {task_command.py:423} INFO - Running <TaskInstance: flight_ml_dag.prepare_ml_data scheduled__2025-07-11T00:00:00+00:00 [running]> on host b33104088b45
+[2025-07-12T15:07:31.253+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_scientist' AIRFLOW_CTX_DAG_ID='flight_ml_dag' AIRFLOW_CTX_TASK_ID='prepare_ml_data' AIRFLOW_CTX_EXECUTION_DATE='2025-07-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-11T00:00:00+00:00'
+[2025-07-12T15:07:31.257+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:07:31.263+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.8/site-packages/***/providers/common/sql/hooks/sql.py:221 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-07-12T15:07:31.264+0000] {logging_mixin.py:188} INFO - ❌ Error preparing ML data: Execution failed on sql '
+        SELECT 
+            airline,
+            origin_airport,
+            destination_airport,
+            aircraft_type,
+            EXTRACT(HOUR FROM scheduled_departure) as departure_hour,
+            EXTRACT(DOW FROM scheduled_departure) as day_of_week,
+            flight_duration_minutes,
+            status,
+            CASE 
+                WHEN status IN ('Delayed', 'Cancelled') THEN 1 
+                ELSE 0 
+            END as is_delayed
+        FROM scheduled_flights
+        WHERE scheduled_departure IS NOT NULL
+        AND flight_duration_minutes IS NOT NULL;
+        ': function pg_catalog.date_part(unknown, text) does not exist
+LINE 7:             EXTRACT(HOUR FROM scheduled_departure) as depart...
+                    ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+[2025-07-12T15:07:31.264+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 2018, in execute
+    cur.execute(*args, **kwargs)
+psycopg2.errors.UndefinedFunction: function pg_catalog.date_part(unknown, text) does not exist
+LINE 7:             EXTRACT(HOUR FROM scheduled_departure) as depart...
+                    ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/flight_ml_dag.py", line 59, in prepare_ml_data
+    df = postgres_hook.get_pandas_df(ml_query)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 221, in get_pandas_df
+    return psql.read_sql(sql, con=conn, params=parameters, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 564, in read_sql
+    return pandas_sql.read_query(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 2078, in read_query
+    cursor = self.execute(*args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 2030, in execute
+    raise ex from exc
+pandas.errors.DatabaseError: Execution failed on sql '
+        SELECT 
+            airline,
+            origin_airport,
+            destination_airport,
+            aircraft_type,
+            EXTRACT(HOUR FROM scheduled_departure) as departure_hour,
+            EXTRACT(DOW FROM scheduled_departure) as day_of_week,
+            flight_duration_minutes,
+            status,
+            CASE 
+                WHEN status IN ('Delayed', 'Cancelled') THEN 1 
+                ELSE 0 
+            END as is_delayed
+        FROM scheduled_flights
+        WHERE scheduled_departure IS NOT NULL
+        AND flight_duration_minutes IS NOT NULL;
+        ': function pg_catalog.date_part(unknown, text) does not exist
+LINE 7:             EXTRACT(HOUR FROM scheduled_departure) as depart...
+                    ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[2025-07-12T15:07:31.269+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=flight_ml_dag, task_id=prepare_ml_data, execution_date=20250711T000000, start_date=20250712T150731, end_date=20250712T150731
+[2025-07-12T15:07:31.273+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 63 for task prepare_ml_data (Execution failed on sql '
+        SELECT 
+            airline,
+            origin_airport,
+            destination_airport,
+            aircraft_type,
+            EXTRACT(HOUR FROM scheduled_departure) as departure_hour,
+            EXTRACT(DOW FROM scheduled_departure) as day_of_week,
+            flight_duration_minutes,
+            status,
+            CASE 
+                WHEN status IN ('Delayed', 'Cancelled') THEN 1 
+                ELSE 0 
+            END as is_delayed
+        FROM scheduled_flights
+        WHERE scheduled_departure IS NOT NULL
+        AND flight_duration_minutes IS NOT NULL;
+        ': function pg_catalog.date_part(unknown, text) does not exist
+LINE 7:             EXTRACT(HOUR FROM scheduled_departure) as depart...
+                    ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+; 443)
+[2025-07-12T15:07:31.293+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-07-12T15:07:31.303+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

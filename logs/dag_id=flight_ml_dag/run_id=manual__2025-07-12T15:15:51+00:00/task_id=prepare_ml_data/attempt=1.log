@@ -1,0 +1,18 @@
+[2025-07-12T15:15:52.112+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_ml_dag.prepare_ml_data manual__2025-07-12T15:15:51+00:00 [queued]>
+[2025-07-12T15:15:52.116+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_ml_dag.prepare_ml_data manual__2025-07-12T15:15:51+00:00 [queued]>
+[2025-07-12T15:15:52.116+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-12T15:15:52.121+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): prepare_ml_data> on 2025-07-12 15:15:51+00:00
+[2025-07-12T15:15:52.124+0000] {standard_task_runner.py:60} INFO - Started process 408 to run task
+[2025-07-12T15:15:52.125+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'flight_ml_dag', 'prepare_ml_data', 'manual__2025-07-12T15:15:51+00:00', '--job-id', '88', '--raw', '--subdir', 'DAGS_FOLDER/flight_ml_dag.py', '--cfg-path', '/tmp/tmpu3thmaq8']
+[2025-07-12T15:15:52.126+0000] {standard_task_runner.py:88} INFO - Job 88: Subtask prepare_ml_data
+[2025-07-12T15:15:52.142+0000] {task_command.py:423} INFO - Running <TaskInstance: flight_ml_dag.prepare_ml_data manual__2025-07-12T15:15:51+00:00 [running]> on host f1b3ce86e5d1
+[2025-07-12T15:15:52.168+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_scientist' AIRFLOW_CTX_DAG_ID='flight_ml_dag' AIRFLOW_CTX_TASK_ID='prepare_ml_data' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T15:15:51+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-12T15:15:51+00:00'
+[2025-07-12T15:15:52.172+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:15:52.193+0000] {logging_mixin.py:188} INFO - ✅ ML data prepared: 1000 records
+[2025-07-12T15:15:52.194+0000] {logging_mixin.py:188} INFO - 📊 Delay rate: 50.20%
+[2025-07-12T15:15:52.194+0000] {logging_mixin.py:188} INFO - 🛫 Airlines: 8
+[2025-07-12T15:15:52.194+0000] {logging_mixin.py:188} INFO - 🗺️ Routes: 90
+[2025-07-12T15:15:52.194+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-07-12T15:15:52.199+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=flight_ml_dag, task_id=prepare_ml_data, execution_date=20250712T151551, start_date=20250712T151552, end_date=20250712T151552
+[2025-07-12T15:15:52.226+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-12T15:15:52.235+0000] {taskinstance.py:3280} INFO - 2 downstream tasks scheduled from follow-on schedule check

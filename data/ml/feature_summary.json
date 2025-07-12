@@ -1,0 +1,22 @@
+{
+  "total_records": 1000,
+  "delay_rate": 0.494,
+  "airlines_count": 109,
+  "routes_count": 994,
+  "features": [
+    "airline",
+    "origin_airport",
+    "destination_airport",
+    "aircraft_type",
+    "departure_hour",
+    "day_of_week",
+    "flight_duration_minutes",
+    "status",
+    "is_delayed",
+    "route",
+    "is_weekend",
+    "is_peak_hour",
+    "duration_category"
+  ],
+  "preparation_timestamp": "2025-07-12T15:51:43.797207"
+}

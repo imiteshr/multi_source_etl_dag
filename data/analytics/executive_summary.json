@@ -1,0 +1,24 @@
+{
+  "data_overview": {
+    "total_scheduled_flights": 1000,
+    "total_realtime_flights": 11875,
+    "total_airports_in_system": 81,
+    "unique_airlines": 109,
+    "origin_airports": 301,
+    "destination_airports": 308,
+    "aircraft_types": 5
+  },
+  "operational_metrics": {
+    "average_flight_duration_minutes": 233.24,
+    "average_flight_duration_hours": 3.89,
+    "data_coverage_start": "2025-07-12 06:00:00",
+    "data_coverage_end": "2025-07-13 00:45:00"
+  },
+  "data_quality": {
+    "scheduled_flights_completeness": "Good",
+    "realtime_data_availability": "Available",
+    "airport_data_coverage": "Complete"
+  },
+  "generated_at": "2025-07-12T15:51:34.613433",
+  "pipeline_status": "Operational"
+}

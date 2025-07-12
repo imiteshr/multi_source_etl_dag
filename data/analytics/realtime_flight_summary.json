@@ -1,0 +1,26 @@
+{
+  "total_flights": 11828,
+  "data_sources": {
+    "opensky": 11828
+  },
+  "regions": {
+    "North America": 6955,
+    "Europe": 3767,
+    "Asia": 397,
+    "Other": 282,
+    "Africa": 206,
+    "South America": 201,
+    "Oceania": 20
+  },
+  "countries": 115,
+  "airlines": 1,
+  "aircraft_types": 1,
+  "data_quality": {
+    "avg_quality_score": 98.58640514034495,
+    "high_quality_flights": 11775,
+    "with_position": 11828,
+    "with_speed": 11826,
+    "with_altitude": 11080
+  },
+  "extraction_time": "2025-07-12T15:39:11.974838"
+}

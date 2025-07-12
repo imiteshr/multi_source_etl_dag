@@ -1,0 +1,166 @@
+[2025-07-12T15:50:20.502+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_data_quality_check.generate_data_summary manual__2025-07-12T15:50:19.294608+00:00 [queued]>
+[2025-07-12T15:50:20.505+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_data_quality_check.generate_data_summary manual__2025-07-12T15:50:19.294608+00:00 [queued]>
+[2025-07-12T15:50:20.505+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-12T15:50:20.510+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): generate_data_summary> on 2025-07-12 15:50:19.294608+00:00
+[2025-07-12T15:50:20.513+0000] {standard_task_runner.py:60} INFO - Started process 1099 to run task
+[2025-07-12T15:50:20.515+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'flight_data_quality_check', 'generate_data_summary', 'manual__2025-07-12T15:50:19.294608+00:00', '--job-id', '126', '--raw', '--subdir', 'DAGS_FOLDER/flight_data_quality.py', '--cfg-path', '/tmp/tmpbciswzlk']
+[2025-07-12T15:50:20.516+0000] {standard_task_runner.py:88} INFO - Job 126: Subtask generate_data_summary
+[2025-07-12T15:50:20.537+0000] {task_command.py:423} INFO - Running <TaskInstance: flight_data_quality_check.generate_data_summary manual__2025-07-12T15:50:19.294608+00:00 [running]> on host f1b3ce86e5d1
+[2025-07-12T15:50:20.662+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='flight_data_quality_check' AIRFLOW_CTX_TASK_ID='generate_data_summary' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T15:50:19.294608+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-12T15:50:19.294608+00:00'
+[2025-07-12T15:50:20.665+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:50:20.666+0000] {sql.py:450} INFO - Running statement: 
+        SELECT airline, COUNT(*) as flight_count
+        FROM scheduled_flights
+        GROUP BY airline
+        ORDER BY flight_count DESC
+        , parameters: None
+[2025-07-12T15:50:20.667+0000] {sql.py:459} INFO - Rows affected: 109
+[2025-07-12T15:50:20.667+0000] {logging_mixin.py:188} INFO - Airlines summary:
+[2025-07-12T15:50:20.667+0000] {logging_mixin.py:188} INFO -   MS: 22 flights
+[2025-07-12T15:50:20.667+0000] {logging_mixin.py:188} INFO -   AA: 17 flights
+[2025-07-12T15:50:20.668+0000] {logging_mixin.py:188} INFO -   BL: 17 flights
+[2025-07-12T15:50:20.668+0000] {logging_mixin.py:188} INFO -   AC: 15 flights
+[2025-07-12T15:50:20.668+0000] {logging_mixin.py:188} INFO -   QR: 14 flights
+[2025-07-12T15:50:20.668+0000] {logging_mixin.py:188} INFO -   IB: 14 flights
+[2025-07-12T15:50:20.668+0000] {logging_mixin.py:188} INFO -   ZX: 14 flights
+[2025-07-12T15:50:20.668+0000] {logging_mixin.py:188} INFO -   PX: 14 flights
+[2025-07-12T15:50:20.668+0000] {logging_mixin.py:188} INFO -   VY: 14 flights
+[2025-07-12T15:50:20.669+0000] {logging_mixin.py:188} INFO -   F9: 14 flights
+[2025-07-12T15:50:20.669+0000] {logging_mixin.py:188} INFO -   ME: 13 flights
+[2025-07-12T15:50:20.669+0000] {logging_mixin.py:188} INFO -   WF: 13 flights
+[2025-07-12T15:50:20.669+0000] {logging_mixin.py:188} INFO -   W5: 13 flights
+[2025-07-12T15:50:20.669+0000] {logging_mixin.py:188} INFO -   NZ: 13 flights
+[2025-07-12T15:50:20.669+0000] {logging_mixin.py:188} INFO -   SJ: 12 flights
+[2025-07-12T15:50:20.669+0000] {logging_mixin.py:188} INFO -   SV: 12 flights
+[2025-07-12T15:50:20.670+0000] {logging_mixin.py:188} INFO -   CX: 12 flights
+[2025-07-12T15:50:20.670+0000] {logging_mixin.py:188} INFO -   AZ: 12 flights
+[2025-07-12T15:50:20.670+0000] {logging_mixin.py:188} INFO -   LX: 12 flights
+[2025-07-12T15:50:20.670+0000] {logging_mixin.py:188} INFO -   VN: 12 flights
+[2025-07-12T15:50:20.670+0000] {logging_mixin.py:188} INFO -   OZ: 12 flights
+[2025-07-12T15:50:20.670+0000] {logging_mixin.py:188} INFO -   LA: 12 flights
+[2025-07-12T15:50:20.670+0000] {logging_mixin.py:188} INFO -   DL: 12 flights
+[2025-07-12T15:50:20.671+0000] {logging_mixin.py:188} INFO -   TT: 11 flights
+[2025-07-12T15:50:20.671+0000] {logging_mixin.py:188} INFO -   G4: 11 flights
+[2025-07-12T15:50:20.671+0000] {logging_mixin.py:188} INFO -   DJ: 11 flights
+[2025-07-12T15:50:20.671+0000] {logging_mixin.py:188} INFO -   FR: 11 flights
+[2025-07-12T15:50:20.671+0000] {logging_mixin.py:188} INFO -   LH: 11 flights
+[2025-07-12T15:50:20.671+0000] {logging_mixin.py:188} INFO -   JJ: 11 flights
+[2025-07-12T15:50:20.672+0000] {logging_mixin.py:188} INFO -   SK: 11 flights
+[2025-07-12T15:50:20.672+0000] {logging_mixin.py:188} INFO -   SY: 10 flights
+[2025-07-12T15:50:20.672+0000] {logging_mixin.py:188} INFO -   UU: 10 flights
+[2025-07-12T15:50:20.672+0000] {logging_mixin.py:188} INFO -   SA: 10 flights
+[2025-07-12T15:50:20.672+0000] {logging_mixin.py:188} INFO -   LP: 10 flights
+[2025-07-12T15:50:20.672+0000] {logging_mixin.py:188} INFO -   XG: 10 flights
+[2025-07-12T15:50:20.673+0000] {logging_mixin.py:188} INFO -   P5: 10 flights
+[2025-07-12T15:50:20.673+0000] {logging_mixin.py:188} INFO -   FZ: 10 flights
+[2025-07-12T15:50:20.673+0000] {logging_mixin.py:188} INFO -   FJ: 10 flights
+[2025-07-12T15:50:20.673+0000] {logging_mixin.py:188} INFO -   UA: 10 flights
+[2025-07-12T15:50:20.673+0000] {logging_mixin.py:188} INFO -   NK: 10 flights
+[2025-07-12T15:50:20.673+0000] {logging_mixin.py:188} INFO -   PD: 10 flights
+[2025-07-12T15:50:20.673+0000] {logging_mixin.py:188} INFO -   B6: 10 flights
+[2025-07-12T15:50:20.674+0000] {logging_mixin.py:188} INFO -   UK: 9 flights
+[2025-07-12T15:50:20.674+0000] {logging_mixin.py:188} INFO -   SN: 9 flights
+[2025-07-12T15:50:20.674+0000] {logging_mixin.py:188} INFO -   AR: 9 flights
+[2025-07-12T15:50:20.674+0000] {logging_mixin.py:188} INFO -   JL: 9 flights
+[2025-07-12T15:50:20.674+0000] {logging_mixin.py:188} INFO -   JQ: 9 flights
+[2025-07-12T15:50:20.674+0000] {logging_mixin.py:188} INFO -   NH: 9 flights
+[2025-07-12T15:50:20.674+0000] {logging_mixin.py:188} INFO -   KL: 9 flights
+[2025-07-12T15:50:20.675+0000] {logging_mixin.py:188} INFO -   EY: 9 flights
+[2025-07-12T15:50:20.675+0000] {logging_mixin.py:188} INFO -   TG: 9 flights
+[2025-07-12T15:50:20.675+0000] {logging_mixin.py:188} INFO -   WG: 9 flights
+[2025-07-12T15:50:20.675+0000] {logging_mixin.py:188} INFO -   AS: 9 flights
+[2025-07-12T15:50:20.675+0000] {logging_mixin.py:188} INFO -   GF: 9 flights
+[2025-07-12T15:50:20.675+0000] {logging_mixin.py:188} INFO -   U2: 9 flights
+[2025-07-12T15:50:20.675+0000] {logging_mixin.py:188} INFO -   KE: 9 flights
+[2025-07-12T15:50:20.676+0000] {logging_mixin.py:188} INFO -   I5: 9 flights
+[2025-07-12T15:50:20.676+0000] {logging_mixin.py:188} INFO -   DT: 9 flights
+[2025-07-12T15:50:20.676+0000] {logging_mixin.py:188} INFO -   IR: 9 flights
+[2025-07-12T15:50:20.676+0000] {logging_mixin.py:188} INFO -   MP: 9 flights
+[2025-07-12T15:50:20.676+0000] {logging_mixin.py:188} INFO -   SB: 9 flights
+[2025-07-12T15:50:20.676+0000] {logging_mixin.py:188} INFO -   QZ: 9 flights
+[2025-07-12T15:50:20.676+0000] {logging_mixin.py:188} INFO -   RO: 9 flights
+[2025-07-12T15:50:20.676+0000] {logging_mixin.py:188} INFO -   OK: 9 flights
+[2025-07-12T15:50:20.677+0000] {logging_mixin.py:188} INFO -   CM: 9 flights
+[2025-07-12T15:50:20.677+0000] {logging_mixin.py:188} INFO -   AV: 9 flights
+[2025-07-12T15:50:20.677+0000] {logging_mixin.py:188} INFO -   AI: 8 flights
+[2025-07-12T15:50:20.677+0000] {logging_mixin.py:188} INFO -   LO: 8 flights
+[2025-07-12T15:50:20.677+0000] {logging_mixin.py:188} INFO -   FD: 8 flights
+[2025-07-12T15:50:20.677+0000] {logging_mixin.py:188} INFO -   KQ: 8 flights
+[2025-07-12T15:50:20.677+0000] {logging_mixin.py:188} INFO -   PC: 8 flights
+[2025-07-12T15:50:20.677+0000] {logging_mixin.py:188} INFO -   BA: 8 flights
+[2025-07-12T15:50:20.678+0000] {logging_mixin.py:188} INFO -   YM: 8 flights
+[2025-07-12T15:50:20.678+0000] {logging_mixin.py:188} INFO -   RJ: 8 flights
+[2025-07-12T15:50:20.678+0000] {logging_mixin.py:188} INFO -   QF: 8 flights
+[2025-07-12T15:50:20.678+0000] {logging_mixin.py:188} INFO -   G3: 8 flights
+[2025-07-12T15:50:20.678+0000] {logging_mixin.py:188} INFO -   TS: 8 flights
+[2025-07-12T15:50:20.678+0000] {logging_mixin.py:188} INFO -   MH: 7 flights
+[2025-07-12T15:50:20.678+0000] {logging_mixin.py:188} INFO -   ET: 7 flights
+[2025-07-12T15:50:20.679+0000] {logging_mixin.py:188} INFO -   JU: 7 flights
+[2025-07-12T15:50:20.679+0000] {logging_mixin.py:188} INFO -   6E: 7 flights
+[2025-07-12T15:50:20.679+0000] {logging_mixin.py:188} INFO -   AY: 7 flights
+[2025-07-12T15:50:20.679+0000] {logging_mixin.py:188} INFO -   BT: 7 flights
+[2025-07-12T15:50:20.679+0000] {logging_mixin.py:188} INFO -   PK: 7 flights
+[2025-07-12T15:50:20.680+0000] {logging_mixin.py:188} INFO -   CI: 7 flights
+[2025-07-12T15:50:20.680+0000] {logging_mixin.py:188} INFO -   AT: 7 flights
+[2025-07-12T15:50:20.680+0000] {logging_mixin.py:188} INFO -   SW: 7 flights
+[2025-07-12T15:50:20.680+0000] {logging_mixin.py:188} INFO -   AF: 7 flights
+[2025-07-12T15:50:20.680+0000] {logging_mixin.py:188} INFO -   TP: 7 flights
+[2025-07-12T15:50:20.680+0000] {logging_mixin.py:188} INFO -   VJ: 6 flights
+[2025-07-12T15:50:20.681+0000] {logging_mixin.py:188} INFO -   TK: 6 flights
+[2025-07-12T15:50:20.681+0000] {logging_mixin.py:188} INFO -   EK: 6 flights
+[2025-07-12T15:50:20.681+0000] {logging_mixin.py:188} INFO -   WJ: 6 flights
+[2025-07-12T15:50:20.681+0000] {logging_mixin.py:188} INFO -   TD: 6 flights
+[2025-07-12T15:50:20.681+0000] {logging_mixin.py:188} INFO -   IX: 6 flights
+[2025-07-12T15:50:20.681+0000] {logging_mixin.py:188} INFO -   HV: 6 flights
+[2025-07-12T15:50:20.682+0000] {logging_mixin.py:188} INFO -   WS: 6 flights
+[2025-07-12T15:50:20.682+0000] {logging_mixin.py:188} INFO -   F8: 6 flights
+[2025-07-12T15:50:20.682+0000] {logging_mixin.py:188} INFO -   HC: 5 flights
+[2025-07-12T15:50:20.682+0000] {logging_mixin.py:188} INFO -   AD: 5 flights
+[2025-07-12T15:50:20.682+0000] {logging_mixin.py:188} INFO -   BR: 5 flights
+[2025-07-12T15:50:20.682+0000] {logging_mixin.py:188} INFO -   SQ: 5 flights
+[2025-07-12T15:50:20.682+0000] {logging_mixin.py:188} INFO -   GA: 5 flights
+[2025-07-12T15:50:20.683+0000] {logging_mixin.py:188} INFO -   D8: 5 flights
+[2025-07-12T15:50:20.683+0000] {logging_mixin.py:188} INFO -   VA: 4 flights
+[2025-07-12T15:50:20.683+0000] {logging_mixin.py:188} INFO -   W6: 4 flights
+[2025-07-12T15:50:20.683+0000] {logging_mixin.py:188} INFO -   OS: 4 flights
+[2025-07-12T15:50:20.683+0000] {logging_mixin.py:188} INFO -   WN: 2 flights
+[2025-07-12T15:50:20.683+0000] {logging_mixin.py:188} INFO -   IC: 2 flights
+[2025-07-12T15:50:20.687+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:50:20.689+0000] {sql.py:450} INFO - Running statement: 
+        SELECT origin_airport, destination_airport, COUNT(*) as route_count
+        FROM scheduled_flights
+        GROUP BY origin_airport, destination_airport
+        ORDER BY route_count DESC
+        LIMIT 10
+        , parameters: None
+[2025-07-12T15:50:20.689+0000] {sql.py:459} INFO - Rows affected: 10
+[2025-07-12T15:50:20.690+0000] {logging_mixin.py:188} INFO - 
+Top 10 routes:
+[2025-07-12T15:50:20.690+0000] {logging_mixin.py:188} INFO -   CPH -> CYI: 2 flights
+[2025-07-12T15:50:20.690+0000] {logging_mixin.py:188} INFO -   YYZ -> FOR: 2 flights
+[2025-07-12T15:50:20.690+0000] {logging_mixin.py:188} INFO -   CBQ -> SFA: 2 flights
+[2025-07-12T15:50:20.690+0000] {logging_mixin.py:188} INFO -   CGY -> HTY: 2 flights
+[2025-07-12T15:50:20.691+0000] {logging_mixin.py:188} INFO -   DUR -> LAX: 2 flights
+[2025-07-12T15:50:20.691+0000] {logging_mixin.py:188} INFO -   AYT -> HRG: 2 flights
+[2025-07-12T15:50:20.691+0000] {logging_mixin.py:188} INFO -   VOG -> DOH: 1 flights
+[2025-07-12T15:50:20.691+0000] {logging_mixin.py:188} INFO -   ORD -> ADD: 1 flights
+[2025-07-12T15:50:20.691+0000] {logging_mixin.py:188} INFO -   BGW -> BFN: 1 flights
+[2025-07-12T15:50:20.691+0000] {logging_mixin.py:188} INFO -   ELG -> PIU: 1 flights
+[2025-07-12T15:50:20.693+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:50:20.695+0000] {sql.py:450} INFO - Running statement: 
+        SELECT status, COUNT(*) as status_count
+        FROM scheduled_flights
+        GROUP BY status
+        ORDER BY status_count DESC
+        , parameters: None
+[2025-07-12T15:50:20.695+0000] {sql.py:459} INFO - Rows affected: 4
+[2025-07-12T15:50:20.696+0000] {logging_mixin.py:188} INFO - 
+Flight status summary:
+[2025-07-12T15:50:20.696+0000] {logging_mixin.py:188} INFO -   On Time: 276 flights
+[2025-07-12T15:50:20.696+0000] {logging_mixin.py:188} INFO -   Cancelled: 259 flights
+[2025-07-12T15:50:20.696+0000] {logging_mixin.py:188} INFO -   Delayed: 235 flights
+[2025-07-12T15:50:20.696+0000] {logging_mixin.py:188} INFO -   Scheduled: 230 flights
+[2025-07-12T15:50:20.696+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-07-12T15:50:20.700+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=flight_data_quality_check, task_id=generate_data_summary, execution_date=20250712T155019, start_date=20250712T155020, end_date=20250712T155020
+[2025-07-12T15:50:20.742+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-12T15:50:20.749+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,21 @@
+[2025-07-12T15:50:50.173+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_ml_dag.train_delay_prediction_model manual__2025-07-12T15:50:48.160370+00:00 [queued]>
+[2025-07-12T15:50:50.176+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_ml_dag.train_delay_prediction_model manual__2025-07-12T15:50:48.160370+00:00 [queued]>
+[2025-07-12T15:50:50.176+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-12T15:50:50.181+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): train_delay_prediction_model> on 2025-07-12 15:50:48.160370+00:00
+[2025-07-12T15:50:50.184+0000] {standard_task_runner.py:60} INFO - Started process 1229 to run task
+[2025-07-12T15:50:50.186+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'flight_ml_dag', 'train_delay_prediction_model', 'manual__2025-07-12T15:50:48.160370+00:00', '--job-id', '132', '--raw', '--subdir', 'DAGS_FOLDER/flight_ml_dag.py', '--cfg-path', '/tmp/tmpfc4rj6_t']
+[2025-07-12T15:50:50.187+0000] {standard_task_runner.py:88} INFO - Job 132: Subtask train_delay_prediction_model
+[2025-07-12T15:50:50.206+0000] {task_command.py:423} INFO - Running <TaskInstance: flight_ml_dag.train_delay_prediction_model manual__2025-07-12T15:50:48.160370+00:00 [running]> on host f1b3ce86e5d1
+[2025-07-12T15:50:50.237+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_scientist' AIRFLOW_CTX_DAG_ID='flight_ml_dag' AIRFLOW_CTX_TASK_ID='train_delay_prediction_model' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T15:50:48.160370+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-12T15:50:48.160370+00:00'
+[2025-07-12T15:50:50.386+0000] {logging_mixin.py:188} INFO - ✅ Delay prediction model trained
+[2025-07-12T15:50:50.386+0000] {logging_mixin.py:188} INFO - 🎯 Accuracy: 46.50%
+[2025-07-12T15:50:50.386+0000] {logging_mixin.py:188} INFO - 📊 Training samples: 800
+[2025-07-12T15:50:50.386+0000] {logging_mixin.py:188} INFO - 🔍 Test samples: 200
+[2025-07-12T15:50:50.386+0000] {logging_mixin.py:188} INFO - 🏆 Top 3 important features:
+[2025-07-12T15:50:50.386+0000] {logging_mixin.py:188} INFO -    origin_airport: 0.208
+[2025-07-12T15:50:50.386+0000] {logging_mixin.py:188} INFO -    destination_airport: 0.205
+[2025-07-12T15:50:50.386+0000] {logging_mixin.py:188} INFO -    airline: 0.191
+[2025-07-12T15:50:50.386+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-07-12T15:50:50.390+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=flight_ml_dag, task_id=train_delay_prediction_model, execution_date=20250712T155048, start_date=20250712T155050, end_date=20250712T155050
+[2025-07-12T15:50:50.406+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-12T15:50:50.414+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

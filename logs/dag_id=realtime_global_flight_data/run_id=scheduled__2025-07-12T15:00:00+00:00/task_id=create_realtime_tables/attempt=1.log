@@ -1,0 +1,108 @@
+[2025-07-12T15:30:04.024+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: realtime_global_flight_data.create_realtime_tables scheduled__2025-07-12T15:00:00+00:00 [queued]>
+[2025-07-12T15:30:04.027+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: realtime_global_flight_data.create_realtime_tables scheduled__2025-07-12T15:00:00+00:00 [queued]>
+[2025-07-12T15:30:04.027+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-07-12T15:30:04.034+0000] {taskinstance.py:2191} INFO - Executing <Task(PostgresOperator): create_realtime_tables> on 2025-07-12 15:00:00+00:00
+[2025-07-12T15:30:04.037+0000] {standard_task_runner.py:60} INFO - Started process 1494 to run task
+[2025-07-12T15:30:04.042+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'realtime_global_flight_data', 'create_realtime_tables', 'scheduled__2025-07-12T15:00:00+00:00', '--job-id', '97', '--raw', '--subdir', 'DAGS_FOLDER/realtime_global_flight_data.py', '--cfg-path', '/tmp/tmp99qp65wd']
+[2025-07-12T15:30:04.043+0000] {standard_task_runner.py:88} INFO - Job 97: Subtask create_realtime_tables
+[2025-07-12T15:30:04.071+0000] {task_command.py:423} INFO - Running <TaskInstance: realtime_global_flight_data.create_realtime_tables scheduled__2025-07-12T15:00:00+00:00 [running]> on host f1b3ce86e5d1
+[2025-07-12T15:30:04.236+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='realtime_global_flight_data' AIRFLOW_CTX_TASK_ID='create_realtime_tables' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T15:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-12T15:00:00+00:00'
+[2025-07-12T15:30:04.237+0000] {sql.py:276} INFO - Executing: 
+    -- Real-time global flights table
+    CREATE TABLE IF NOT EXISTS realtime_global_flights (
+        icao24 VARCHAR(10),
+        callsign VARCHAR(20),
+        origin_country VARCHAR(100),
+        latitude FLOAT,
+        longitude FLOAT,
+        altitude FLOAT,
+        speed FLOAT,
+        heading FLOAT,
+        vertical_speed FLOAT,
+        departure_airport VARCHAR(10),
+        arrival_airport VARCHAR(10),
+        airline VARCHAR(10),
+        aircraft_type VARCHAR(20),
+        registration VARCHAR(20),
+        squawk VARCHAR(10),
+        flight_status VARCHAR(50),
+        data_source VARCHAR(20),
+        extraction_time TIMESTAMP,
+        region VARCHAR(50),
+        is_airborne BOOLEAN,
+        has_position BOOLEAN,
+        has_speed BOOLEAN,
+        has_altitude BOOLEAN,
+        data_quality_score INTEGER,
+        PRIMARY KEY (icao24, extraction_time)
+    );
+    
+    -- Metadata table
+    CREATE TABLE IF NOT EXISTS realtime_flight_metadata (
+        table_name VARCHAR(50),
+        record_count INTEGER,
+        data_sources TEXT,
+        last_updated TIMESTAMP,
+        data_quality_avg FLOAT,
+        PRIMARY KEY (table_name, last_updated)
+    );
+    
+    -- Create indexes for better performance
+    CREATE INDEX IF NOT EXISTS idx_realtime_flights_region ON realtime_global_flights(region);
+    CREATE INDEX IF NOT EXISTS idx_realtime_flights_country ON realtime_global_flights(origin_country);
+    CREATE INDEX IF NOT EXISTS idx_realtime_flights_airline ON realtime_global_flights(airline);
+    CREATE INDEX IF NOT EXISTS idx_realtime_flights_source ON realtime_global_flights(data_source);
+    CREATE INDEX IF NOT EXISTS idx_realtime_flights_position ON realtime_global_flights(latitude, longitude);
+    
+[2025-07-12T15:30:04.240+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:30:04.243+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T15:30:04.245+0000] {sql.py:450} INFO - Running statement: 
+    -- Real-time global flights table
+    CREATE TABLE IF NOT EXISTS realtime_global_flights (
+        icao24 VARCHAR(10),
+        callsign VARCHAR(20),
+        origin_country VARCHAR(100),
+        latitude FLOAT,
+        longitude FLOAT,
+        altitude FLOAT,
+        speed FLOAT,
+        heading FLOAT,
+        vertical_speed FLOAT,
+        departure_airport VARCHAR(10),
+        arrival_airport VARCHAR(10),
+        airline VARCHAR(10),
+        aircraft_type VARCHAR(20),
+        registration VARCHAR(20),
+        squawk VARCHAR(10),
+        flight_status VARCHAR(50),
+        data_source VARCHAR(20),
+        extraction_time TIMESTAMP,
+        region VARCHAR(50),
+        is_airborne BOOLEAN,
+        has_position BOOLEAN,
+        has_speed BOOLEAN,
+        has_altitude BOOLEAN,
+        data_quality_score INTEGER,
+        PRIMARY KEY (icao24, extraction_time)
+    );
+    
+    -- Metadata table
+    CREATE TABLE IF NOT EXISTS realtime_flight_metadata (
+        table_name VARCHAR(50),
+        record_count INTEGER,
+        data_sources TEXT,
+        last_updated TIMESTAMP,
+        data_quality_avg FLOAT,
+        PRIMARY KEY (table_name, last_updated)
+    );
+    
+    -- Create indexes for better performance
+    CREATE INDEX IF NOT EXISTS idx_realtime_flights_region ON realtime_global_flights(region);
+    CREATE INDEX IF NOT EXISTS idx_realtime_flights_country ON realtime_global_flights(origin_country);
+    CREATE INDEX IF NOT EXISTS idx_realtime_flights_airline ON realtime_global_flights(airline);
+    CREATE INDEX IF NOT EXISTS idx_realtime_flights_source ON realtime_global_flights(data_source);
+    CREATE INDEX IF NOT EXISTS idx_realtime_flights_position ON realtime_global_flights(latitude, longitude);
+    , parameters: None
+[2025-07-12T15:30:04.263+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=realtime_global_flight_data, task_id=create_realtime_tables, execution_date=20250712T150000, start_date=20250712T153004, end_date=20250712T153004
+[2025-07-12T15:30:04.309+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-12T15:30:04.392+0000] {taskinstance.py:3280} INFO - 3 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,171 @@
+{
+  "total_anomalies": 179,
+  "anomalies_by_type": {
+    "duration_anomaly": 0,
+    "scheduling_anomaly": 82,
+    "performance_anomaly": 97
+  },
+  "anomalies": [
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "AF2620",
+      "airline": "AF",
+      "route": "ADZ -> CBQ",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "KQ8586",
+      "airline": "KQ",
+      "route": "JFK -> TTU",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "FR7377",
+      "airline": "FR",
+      "route": "BNE -> SSH",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "QR6443",
+      "airline": "QR",
+      "route": "ELG -> CTS",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "TD7843",
+      "airline": "TD",
+      "route": "DUD -> ELG",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "U23955",
+      "airline": "U2",
+      "route": "OSL -> SDU",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "SV3181",
+      "airline": "SV",
+      "route": "COK -> AYT",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "UU3658",
+      "airline": "UU",
+      "route": "AYT -> HRG",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "SA3022",
+      "airline": "SA",
+      "route": "AHB -> ATF",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "NZ6658",
+      "airline": "NZ",
+      "route": "AYT -> AHB",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "AI466",
+      "airline": "AI",
+      "route": "DME -> ZQN",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "PX1717",
+      "airline": "PX",
+      "route": "GRJ -> MZG",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "LX4206",
+      "airline": "LX",
+      "route": "YYC -> ILO",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "SQ8338",
+      "airline": "SQ",
+      "route": "BNE -> TAB",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "VY2597",
+      "airline": "VY",
+      "route": "CCU -> YYZ",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "CM8204",
+      "airline": "CM",
+      "route": "MEL -> CZM",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "QZ7517",
+      "airline": "QZ",
+      "route": "WAW -> TTT",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "XG8782",
+      "airline": "XG",
+      "route": "EJA -> MFK",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "D85537",
+      "airline": "D8",
+      "route": "MFK -> MTZ",
+      "departure_hour": 13.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "LX9945",
+      "airline": "LX",
+      "route": "ETM -> GIG",
+      "departure_hour": 13.0,
+      "severity": "low"
+    }
+  ],
+  "detection_timestamp": "2025-07-12T15:51:44.927477"
+}

@@ -1,0 +1,65 @@
+[2025-07-12T14:19:50.760+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_data_quality_check.generate_data_summary manual__2025-07-12T14:19:48.717181+00:00 [queued]>
+[2025-07-12T14:19:50.763+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_data_quality_check.generate_data_summary manual__2025-07-12T14:19:48.717181+00:00 [queued]>
+[2025-07-12T14:19:50.763+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-12T14:19:50.768+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): generate_data_summary> on 2025-07-12 14:19:48.717181+00:00
+[2025-07-12T14:19:50.770+0000] {standard_task_runner.py:60} INFO - Started process 277 to run task
+[2025-07-12T14:19:50.772+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'flight_data_quality_check', 'generate_data_summary', 'manual__2025-07-12T14:19:48.717181+00:00', '--job-id', '43', '--raw', '--subdir', 'DAGS_FOLDER/flight_data_quality.py', '--cfg-path', '/tmp/tmpkgkgnbcc']
+[2025-07-12T14:19:50.773+0000] {standard_task_runner.py:88} INFO - Job 43: Subtask generate_data_summary
+[2025-07-12T14:19:50.789+0000] {task_command.py:423} INFO - Running <TaskInstance: flight_data_quality_check.generate_data_summary manual__2025-07-12T14:19:48.717181+00:00 [running]> on host b78d8dd28f9c
+[2025-07-12T14:19:50.877+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='flight_data_quality_check' AIRFLOW_CTX_TASK_ID='generate_data_summary' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T14:19:48.717181+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-12T14:19:48.717181+00:00'
+[2025-07-12T14:19:50.880+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T14:19:50.881+0000] {sql.py:450} INFO - Running statement: 
+        SELECT airline, COUNT(*) as flight_count
+        FROM scheduled_flights
+        GROUP BY airline
+        ORDER BY flight_count DESC
+        , parameters: None
+[2025-07-12T14:19:50.881+0000] {sql.py:459} INFO - Rows affected: 8
+[2025-07-12T14:19:50.882+0000] {logging_mixin.py:188} INFO - Airlines summary:
+[2025-07-12T14:19:50.882+0000] {logging_mixin.py:188} INFO -   WN: 143 flights
+[2025-07-12T14:19:50.882+0000] {logging_mixin.py:188} INFO -   B6: 131 flights
+[2025-07-12T14:19:50.882+0000] {logging_mixin.py:188} INFO -   AS: 128 flights
+[2025-07-12T14:19:50.882+0000] {logging_mixin.py:188} INFO -   DL: 125 flights
+[2025-07-12T14:19:50.883+0000] {logging_mixin.py:188} INFO -   UA: 123 flights
+[2025-07-12T14:19:50.883+0000] {logging_mixin.py:188} INFO -   NK: 119 flights
+[2025-07-12T14:19:50.883+0000] {logging_mixin.py:188} INFO -   F9: 117 flights
+[2025-07-12T14:19:50.883+0000] {logging_mixin.py:188} INFO -   AA: 114 flights
+[2025-07-12T14:19:50.885+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T14:19:50.886+0000] {sql.py:450} INFO - Running statement: 
+        SELECT origin_airport, destination_airport, COUNT(*) as route_count
+        FROM scheduled_flights
+        GROUP BY origin_airport, destination_airport
+        ORDER BY route_count DESC
+        LIMIT 10
+        , parameters: None
+[2025-07-12T14:19:50.887+0000] {sql.py:459} INFO - Rows affected: 10
+[2025-07-12T14:19:50.887+0000] {logging_mixin.py:188} INFO - 
+Top 10 routes:
+[2025-07-12T14:19:50.887+0000] {logging_mixin.py:188} INFO -   SFO -> ORD: 20 flights
+[2025-07-12T14:19:50.887+0000] {logging_mixin.py:188} INFO -   PHX -> LAX: 19 flights
+[2025-07-12T14:19:50.887+0000] {logging_mixin.py:188} INFO -   LAS -> ORD: 18 flights
+[2025-07-12T14:19:50.887+0000] {logging_mixin.py:188} INFO -   LAX -> DFW: 17 flights
+[2025-07-12T14:19:50.888+0000] {logging_mixin.py:188} INFO -   PHX -> JFK: 17 flights
+[2025-07-12T14:19:50.888+0000] {logging_mixin.py:188} INFO -   SEA -> PHX: 17 flights
+[2025-07-12T14:19:50.888+0000] {logging_mixin.py:188} INFO -   DEN -> PHX: 17 flights
+[2025-07-12T14:19:50.888+0000] {logging_mixin.py:188} INFO -   ORD -> SEA: 16 flights
+[2025-07-12T14:19:50.888+0000] {logging_mixin.py:188} INFO -   LAX -> PHX: 16 flights
+[2025-07-12T14:19:50.888+0000] {logging_mixin.py:188} INFO -   PHX -> DFW: 15 flights
+[2025-07-12T14:19:50.890+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-12T14:19:50.891+0000] {sql.py:450} INFO - Running statement: 
+        SELECT status, COUNT(*) as status_count
+        FROM scheduled_flights
+        GROUP BY status
+        ORDER BY status_count DESC
+        , parameters: None
+[2025-07-12T14:19:50.892+0000] {sql.py:459} INFO - Rows affected: 4
+[2025-07-12T14:19:50.892+0000] {logging_mixin.py:188} INFO - 
+Flight status summary:
+[2025-07-12T14:19:50.892+0000] {logging_mixin.py:188} INFO -   Cancelled: 264 flights
+[2025-07-12T14:19:50.893+0000] {logging_mixin.py:188} INFO -   Scheduled: 259 flights
+[2025-07-12T14:19:50.893+0000] {logging_mixin.py:188} INFO -   On Time: 249 flights
+[2025-07-12T14:19:50.893+0000] {logging_mixin.py:188} INFO -   Delayed: 228 flights
+[2025-07-12T14:19:50.893+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-07-12T14:19:50.896+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=flight_data_quality_check, task_id=generate_data_summary, execution_date=20250712T141948, start_date=20250712T141950, end_date=20250712T141950
+[2025-07-12T14:19:50.911+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-12T14:19:50.917+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
