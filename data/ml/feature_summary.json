@@ -1,8 +1,8 @@
 {
   "total_records": 1000,
-  "delay_rate": 0.494,
+  "delay_rate": 0.51,
   "airlines_count": 109,
-  "routes_count": 994,
+  "routes_count": 998,
   "features": [
     "airline",
     "origin_airport",
@@ -18,5 +18,5 @@
     "is_peak_hour",
     "duration_category"
   ],
-  "preparation_timestamp": "2025-07-12T15:51:43.797207"
+  "preparation_timestamp": "2025-07-13T00:20:14.953467"
 }

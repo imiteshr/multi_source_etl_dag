@@ -1,17 +1,17 @@
 {
-  "accuracy": 0.465,
+  "accuracy": 0.525,
   "training_samples": 800,
   "test_samples": 200,
   "feature_importance": {
-    "airline": 0.19103397026185293,
-    "origin_airport": 0.20759603283800868,
-    "destination_airport": 0.204673305451545,
-    "aircraft_type": 0.07500929101617083,
-    "departure_hour": 0.13635110616857113,
-    "day_of_week": 0.006665786930515295,
-    "flight_duration_minutes": 0.15632228644249613,
+    "airline": 0.202057617310913,
+    "origin_airport": 0.19800240353233511,
+    "destination_airport": 0.2047550020102277,
+    "aircraft_type": 0.07766744780112435,
+    "departure_hour": 0.13330630394580995,
+    "day_of_week": 0.007239979035148161,
+    "flight_duration_minutes": 0.15400130137783738,
     "is_weekend": 0.0,
-    "is_peak_hour": 0.02234822089084007
+    "is_peak_hour": 0.022969944986604218
   },
   "features_used": [
     "airline",
@@ -25,5 +25,5 @@
     "is_peak_hour"
   ],
   "model_type": "RandomForestClassifier",
-  "training_timestamp": "2025-07-12T15:51:45.059935"
+  "training_timestamp": "2025-07-13T00:20:20.229003"
 }

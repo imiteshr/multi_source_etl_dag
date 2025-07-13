@@ -1,0 +1,16 @@
+[2025-07-13T00:20:13.796+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_analytics_dag.analyze_airport_traffic scheduled__2025-07-12T12:00:00+00:00 [queued]>
+[2025-07-13T00:20:13.810+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_analytics_dag.analyze_airport_traffic scheduled__2025-07-12T12:00:00+00:00 [queued]>
+[2025-07-13T00:20:13.817+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-13T00:20:13.854+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): analyze_airport_traffic> on 2025-07-12 12:00:00+00:00
+[2025-07-13T00:20:13.864+0000] {standard_task_runner.py:60} INFO - Started process 12294 to run task
+[2025-07-13T00:20:13.871+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'flight_analytics_dag', 'analyze_airport_traffic', 'scheduled__2025-07-12T12:00:00+00:00', '--job-id', '162', '--raw', '--subdir', 'DAGS_FOLDER/flight_analytics_dag.py', '--cfg-path', '/tmp/tmpx4f1r9hb']
+[2025-07-13T00:20:13.877+0000] {standard_task_runner.py:88} INFO - Job 162: Subtask analyze_airport_traffic
+[2025-07-13T00:20:13.942+0000] {task_command.py:423} INFO - Running <TaskInstance: flight_analytics_dag.analyze_airport_traffic scheduled__2025-07-12T12:00:00+00:00 [running]> on host f1b3ce86e5d1
+[2025-07-13T00:20:14.378+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='flight_analytics_dag' AIRFLOW_CTX_TASK_ID='analyze_airport_traffic' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T12:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-12T12:00:00+00:00'
+[2025-07-13T00:20:14.422+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-13T00:20:14.500+0000] {logging_mixin.py:188} INFO - ✅ Airport traffic analysis completed - 20 routes analyzed
+[2025-07-13T00:20:14.507+0000] {logging_mixin.py:188} INFO - Top route: YOW -> IPC (2 flights)
+[2025-07-13T00:20:14.509+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-07-13T00:20:14.540+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=flight_analytics_dag, task_id=analyze_airport_traffic, execution_date=20250712T120000, start_date=20250713T002013, end_date=20250713T002014
+[2025-07-13T00:20:14.599+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-13T00:20:14.646+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,14 @@
+[2025-07-13T00:20:13.832+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_data_etl.extract_airport_data scheduled__2025-07-12T18:00:00+00:00 [queued]>
+[2025-07-13T00:20:13.865+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_data_etl.extract_airport_data scheduled__2025-07-12T18:00:00+00:00 [queued]>
+[2025-07-13T00:20:13.867+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-13T00:20:13.892+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): extract_airport_data> on 2025-07-12 18:00:00+00:00
+[2025-07-13T00:20:13.896+0000] {standard_task_runner.py:60} INFO - Started process 12295 to run task
+[2025-07-13T00:20:13.902+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'flight_data_etl', 'extract_airport_data', 'scheduled__2025-07-12T18:00:00+00:00', '--job-id', '163', '--raw', '--subdir', 'DAGS_FOLDER/flight_data_etl.py', '--cfg-path', '/tmp/tmpp8k9jklo']
+[2025-07-13T00:20:13.904+0000] {standard_task_runner.py:88} INFO - Job 163: Subtask extract_airport_data
+[2025-07-13T00:20:13.974+0000] {task_command.py:423} INFO - Running <TaskInstance: flight_data_etl.extract_airport_data scheduled__2025-07-12T18:00:00+00:00 [running]> on host f1b3ce86e5d1
+[2025-07-13T00:20:14.631+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='flight_data_etl' AIRFLOW_CTX_TASK_ID='extract_airport_data' AIRFLOW_CTX_EXECUTION_DATE='2025-07-12T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-12T18:00:00+00:00'
+[2025-07-13T00:20:14.646+0000] {logging_mixin.py:188} INFO - Extracted 81 airport records
+[2025-07-13T00:20:14.647+0000] {python.py:201} INFO - Done. Returned value was: /opt/***/data/airport_data.csv
+[2025-07-13T00:20:14.688+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=flight_data_etl, task_id=extract_airport_data, execution_date=20250712T180000, start_date=20250713T002013, end_date=20250713T002014
+[2025-07-13T00:20:14.749+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-13T00:20:14.779+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,146 +1,146 @@
 {
   "top_routes": [
     {
-      "origin_airport": "CBQ",
-      "destination_airport": "SFA",
+      "origin_airport": "YOW",
+      "destination_airport": "IPC",
       "flight_count": 2,
       "airline_count": 2,
-      "avg_duration_minutes": 255.0
+      "avg_duration_minutes": 157.5
     },
     {
-      "origin_airport": "CGY",
-      "destination_airport": "HTY",
+      "origin_airport": "NQN",
+      "destination_airport": "TAG",
       "flight_count": 2,
       "airline_count": 2,
-      "avg_duration_minutes": 285.0
+      "avg_duration_minutes": 120.0
     },
     {
-      "origin_airport": "DUR",
-      "destination_airport": "LAX",
-      "flight_count": 2,
-      "airline_count": 2,
-      "avg_duration_minutes": 217.5
-    },
-    {
-      "origin_airport": "AYT",
-      "destination_airport": "HRG",
-      "flight_count": 2,
-      "airline_count": 2,
-      "avg_duration_minutes": 277.5
-    },
-    {
-      "origin_airport": "CPH",
-      "destination_airport": "CYI",
-      "flight_count": 2,
-      "airline_count": 2,
-      "avg_duration_minutes": 150.0
-    },
-    {
-      "origin_airport": "YYZ",
-      "destination_airport": "FOR",
-      "flight_count": 2,
-      "airline_count": 2,
-      "avg_duration_minutes": 247.5
-    },
-    {
-      "origin_airport": "ADL",
-      "destination_airport": "HFA",
+      "origin_airport": "ABV",
+      "destination_airport": "PRG",
       "flight_count": 1,
       "airline_count": 1,
-      "avg_duration_minutes": 300.0
+      "avg_duration_minutes": 270.0
     },
     {
-      "origin_airport": "ADL",
-      "destination_airport": "ATF",
+      "origin_airport": "ABV",
+      "destination_airport": "YVR",
       "flight_count": 1,
       "airline_count": 1,
       "avg_duration_minutes": 285.0
     },
     {
       "origin_airport": "ADB",
-      "destination_airport": "LST",
+      "destination_airport": "ATH",
       "flight_count": 1,
       "airline_count": 1,
-      "avg_duration_minutes": 120.0
+      "avg_duration_minutes": 390.0
     },
     {
-      "origin_airport": "ADZ",
-      "destination_airport": "SHC",
-      "flight_count": 1,
-      "airline_count": 1,
-      "avg_duration_minutes": 270.0
-    },
-    {
-      "origin_airport": "AEP",
-      "destination_airport": "BJX",
-      "flight_count": 1,
-      "airline_count": 1,
-      "avg_duration_minutes": 135.0
-    },
-    {
-      "origin_airport": "AEP",
-      "destination_airport": "CYI",
-      "flight_count": 1,
-      "airline_count": 1,
-      "avg_duration_minutes": 150.0
-    },
-    {
-      "origin_airport": "AEP",
-      "destination_airport": "GOI",
-      "flight_count": 1,
-      "airline_count": 1,
-      "avg_duration_minutes": 195.0
-    },
-    {
-      "origin_airport": "AEP",
-      "destination_airport": "ILR",
-      "flight_count": 1,
-      "airline_count": 1,
-      "avg_duration_minutes": 255.0
-    },
-    {
-      "origin_airport": "ADZ",
-      "destination_airport": "MNL",
+      "origin_airport": "ADB",
+      "destination_airport": "CTG",
       "flight_count": 1,
       "airline_count": 1,
       "avg_duration_minutes": 165.0
     },
     {
       "origin_airport": "ADB",
-      "destination_airport": "TRU",
+      "destination_airport": "GAE",
       "flight_count": 1,
       "airline_count": 1,
-      "avg_duration_minutes": 60.0
-    },
-    {
-      "origin_airport": "AGA",
-      "destination_airport": "GPS",
-      "flight_count": 1,
-      "airline_count": 1,
-      "avg_duration_minutes": 60.0
+      "avg_duration_minutes": 300.0
     },
     {
       "origin_airport": "AEP",
-      "destination_airport": "YUL",
+      "destination_airport": "YOW",
+      "flight_count": 1,
+      "airline_count": 1,
+      "avg_duration_minutes": 255.0
+    },
+    {
+      "origin_airport": "ADB",
+      "destination_airport": "HIJ",
+      "flight_count": 1,
+      "airline_count": 1,
+      "avg_duration_minutes": 375.0
+    },
+    {
+      "origin_airport": "ADD",
+      "destination_airport": "CWB",
+      "flight_count": 1,
+      "airline_count": 1,
+      "avg_duration_minutes": 285.0
+    },
+    {
+      "origin_airport": "ADD",
+      "destination_airport": "GPS",
+      "flight_count": 1,
+      "airline_count": 1,
+      "avg_duration_minutes": 210.0
+    },
+    {
+      "origin_airport": "ADD",
+      "destination_airport": "YNY",
+      "flight_count": 1,
+      "airline_count": 1,
+      "avg_duration_minutes": 60.0
+    },
+    {
+      "origin_airport": "ADL",
+      "destination_airport": "EJA",
+      "flight_count": 1,
+      "airline_count": 1,
+      "avg_duration_minutes": 105.0
+    },
+    {
+      "origin_airport": "ADL",
+      "destination_airport": "NKG",
+      "flight_count": 1,
+      "airline_count": 1,
+      "avg_duration_minutes": 405.0
+    },
+    {
+      "origin_airport": "AEP",
+      "destination_airport": "NQN",
+      "flight_count": 1,
+      "airline_count": 1,
+      "avg_duration_minutes": 390.0
+    },
+    {
+      "origin_airport": "ADB",
+      "destination_airport": "ELS",
+      "flight_count": 1,
+      "airline_count": 1,
+      "avg_duration_minutes": 375.0
+    },
+    {
+      "origin_airport": "AGA",
+      "destination_airport": "ADZ",
+      "flight_count": 1,
+      "airline_count": 1,
+      "avg_duration_minutes": 255.0
+    },
+    {
+      "origin_airport": "AGA",
+      "destination_airport": "NPL",
+      "flight_count": 1,
+      "airline_count": 1,
+      "avg_duration_minutes": 135.0
+    },
+    {
+      "origin_airport": "AGA",
+      "destination_airport": "SCY",
       "flight_count": 1,
       "airline_count": 1,
       "avg_duration_minutes": 315.0
     },
     {
-      "origin_airport": "AHB",
-      "destination_airport": "ATF",
+      "origin_airport": "ABV",
+      "destination_airport": "WCA",
       "flight_count": 1,
       "airline_count": 1,
-      "avg_duration_minutes": 75.0
-    },
-    {
-      "origin_airport": "ADZ",
-      "destination_airport": "CBQ",
-      "flight_count": 1,
-      "airline_count": 1,
-      "avg_duration_minutes": 75.0
+      "avg_duration_minutes": 225.0
     }
   ],
   "total_routes": 20,
-  "analysis_timestamp": "2025-07-12T15:51:33.842206"
+  "analysis_timestamp": "2025-07-13T00:20:14.493367"
 }

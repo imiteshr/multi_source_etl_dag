@@ -1,82 +1,82 @@
 code,name,city,country,latitude,longitude,extraction_date
-JFK,John F. Kennedy International,New York,USA,40.6413,-73.7781,2025-07-12
-LAX,Los Angeles International,Los Angeles,USA,33.9425,-118.4081,2025-07-12
-ORD,O'Hare International,Chicago,USA,41.9742,-87.9073,2025-07-12
-DFW,Dallas/Fort Worth International,Dallas,USA,32.8998,-97.0403,2025-07-12
-DEN,Denver International,Denver,USA,39.8561,-104.6737,2025-07-12
-ATL,Hartsfield-Jackson Atlanta International,Atlanta,USA,33.6407,-84.4277,2025-07-12
-SFO,San Francisco International,San Francisco,USA,37.6213,-122.379,2025-07-12
-LAS,Harry Reid International,Las Vegas,USA,36.084,-115.1537,2025-07-12
-PHX,Phoenix Sky Harbor International,Phoenix,USA,33.4342,-112.0116,2025-07-12
-SEA,Seattle-Tacoma International,Seattle,USA,47.4502,-122.3088,2025-07-12
-MIA,Miami International,Miami,USA,25.7932,-80.2906,2025-07-12
-MCO,Orlando International,Orlando,USA,28.4294,-81.3089,2025-07-12
-EWR,Newark Liberty International,Newark,USA,40.6925,-74.1687,2025-07-12
-BOS,Logan International,Boston,USA,42.3656,-71.0096,2025-07-12
-LGA,LaGuardia Airport,New York,USA,40.7769,-73.874,2025-07-12
-LHR,Heathrow Airport,London,United Kingdom,51.47,-0.4543,2025-07-12
-CDG,Charles de Gaulle Airport,Paris,France,49.0097,2.5479,2025-07-12
-FRA,Frankfurt Airport,Frankfurt,Germany,50.0379,8.5622,2025-07-12
-AMS,Amsterdam Airport Schiphol,Amsterdam,Netherlands,52.3105,4.7683,2025-07-12
-MAD,Madrid-Barajas Airport,Madrid,Spain,40.4839,-3.568,2025-07-12
-FCO,Leonardo da Vinci International,Rome,Italy,41.8003,12.2389,2025-07-12
-MUC,Munich Airport,Munich,Germany,48.3537,11.775,2025-07-12
-ZUR,Zurich Airport,Zurich,Switzerland,47.4647,8.5492,2025-07-12
-VIE,Vienna International Airport,Vienna,Austria,48.1103,16.5697,2025-07-12
-BRU,Brussels Airport,Brussels,Belgium,50.901,4.4856,2025-07-12
-ARN,Stockholm Arlanda Airport,Stockholm,Sweden,59.6519,17.9186,2025-07-12
-CPH,Copenhagen Airport,Copenhagen,Denmark,55.618,12.6508,2025-07-12
-HEL,Helsinki Airport,Helsinki,Finland,60.3172,24.9633,2025-07-12
-OSL,Oslo Airport,Oslo,Norway,60.1939,11.1004,2025-07-12
-IST,Istanbul Airport,Istanbul,Turkey,41.2753,28.7519,2025-07-12
-NRT,Narita International Airport,Tokyo,Japan,35.772,140.3929,2025-07-12
-HND,Haneda Airport,Tokyo,Japan,35.5494,139.7798,2025-07-12
-ICN,Incheon International Airport,Seoul,South Korea,37.4602,126.4407,2025-07-12
-PEK,Beijing Capital International,Beijing,China,40.0799,116.6031,2025-07-12
-PVG,Shanghai Pudong International,Shanghai,China,31.1443,121.8083,2025-07-12
-HKG,Hong Kong International Airport,Hong Kong,China,22.308,113.9185,2025-07-12
-SIN,Singapore Changi Airport,Singapore,Singapore,1.3644,103.9915,2025-07-12
-KUL,Kuala Lumpur International,Kuala Lumpur,Malaysia,2.7456,101.7072,2025-07-12
-BKK,Suvarnabhumi Airport,Bangkok,Thailand,13.69,100.7501,2025-07-12
-CGK,Soekarno-Hatta International,Jakarta,Indonesia,-6.1275,106.6537,2025-07-12
-MNL,Ninoy Aquino International,Manila,Philippines,14.5086,121.0194,2025-07-12
-DEL,Indira Gandhi International,New Delhi,India,28.5665,77.1031,2025-07-12
-BOM,Chhatrapati Shivaji International,Mumbai,India,19.0896,72.8656,2025-07-12
-TPE,Taiwan Taoyuan International,Taipei,Taiwan,25.0797,121.2342,2025-07-12
-DXB,Dubai International Airport,Dubai,UAE,25.2532,55.3657,2025-07-12
-DOH,Hamad International Airport,Doha,Qatar,25.2731,51.608,2025-07-12
-AUH,Abu Dhabi International,Abu Dhabi,UAE,24.433,54.6511,2025-07-12
-RUH,King Khalid International,Riyadh,Saudi Arabia,24.9576,46.6988,2025-07-12
-JED,King Abdulaziz International,Jeddah,Saudi Arabia,21.6796,39.1565,2025-07-12
-TLV,Ben Gurion Airport,Tel Aviv,Israel,32.0114,34.8867,2025-07-12
-CAI,Cairo International Airport,Cairo,Egypt,30.1219,31.4056,2025-07-12
-AMM,Queen Alia International,Amman,Jordan,31.7226,35.9933,2025-07-12
-SYD,Sydney Kingsford Smith Airport,Sydney,Australia,-33.9399,151.1753,2025-07-12
-MEL,Melbourne Airport,Melbourne,Australia,-37.669,144.841,2025-07-12
-BNE,Brisbane Airport,Brisbane,Australia,-27.3942,153.1218,2025-07-12
-PER,Perth Airport,Perth,Australia,-31.9403,115.9669,2025-07-12
-AKL,Auckland Airport,Auckland,New Zealand,-37.0082,174.785,2025-07-12
-CHC,Christchurch Airport,Christchurch,New Zealand,-43.4894,172.532,2025-07-12
-YYZ,Toronto Pearson International,Toronto,Canada,43.6777,-79.6248,2025-07-12
-YVR,Vancouver International,Vancouver,Canada,49.1967,-123.1815,2025-07-12
-YUL,Montreal-Pierre Elliott Trudeau,Montreal,Canada,45.4577,-73.7497,2025-07-12
-YYC,Calgary International,Calgary,Canada,51.1315,-114.0106,2025-07-12
-YEG,Edmonton International,Edmonton,Canada,53.3097,-113.5801,2025-07-12
-GRU,São Paulo/Guarulhos International,São Paulo,Brazil,-23.4356,-46.4731,2025-07-12
-GIG,Rio de Janeiro/Galeão International,Rio de Janeiro,Brazil,-22.8099,-43.2505,2025-07-12
-EZE,Ezeiza International Airport,Buenos Aires,Argentina,-34.8222,-58.5358,2025-07-12
-SCL,Santiago International Airport,Santiago,Chile,-33.393,-70.7858,2025-07-12
-BOG,El Dorado International,Bogotá,Colombia,4.7016,-74.1469,2025-07-12
-LIM,Jorge Chávez International,Lima,Peru,-12.0219,-77.1143,2025-07-12
-UIO,Mariscal Sucre International,Quito,Ecuador,-0.1292,-78.3576,2025-07-12
-JNB,OR Tambo International,Johannesburg,South Africa,-26.1392,28.246,2025-07-12
-CPT,Cape Town International,Cape Town,South Africa,-33.9649,18.6017,2025-07-12
-ADD,Addis Ababa Bole International,Addis Ababa,Ethiopia,8.9806,38.7999,2025-07-12
-LOS,Murtala Muhammed International,Lagos,Nigeria,6.5774,3.3212,2025-07-12
-CMN,Mohammed V International,Casablanca,Morocco,33.3675,-7.5898,2025-07-12
-TUN,Tunis-Carthage International,Tunis,Tunisia,36.851,10.2272,2025-07-12
-MEX,Mexico City International,Mexico City,Mexico,19.4363,-99.0721,2025-07-12
-CUN,Cancún International,Cancún,Mexico,21.0365,-86.8771,2025-07-12
-GDL,Guadalajara International,Guadalajara,Mexico,20.5218,-103.3106,2025-07-12
-MTY,Monterrey International,Monterrey,Mexico,25.7785,-100.1077,2025-07-12
-PVR,Puerto Vallarta International,Puerto Vallarta,Mexico,20.6801,-105.2544,2025-07-12
+JFK,John F. Kennedy International,New York,USA,40.6413,-73.7781,2025-07-13
+LAX,Los Angeles International,Los Angeles,USA,33.9425,-118.4081,2025-07-13
+ORD,O'Hare International,Chicago,USA,41.9742,-87.9073,2025-07-13
+DFW,Dallas/Fort Worth International,Dallas,USA,32.8998,-97.0403,2025-07-13
+DEN,Denver International,Denver,USA,39.8561,-104.6737,2025-07-13
+ATL,Hartsfield-Jackson Atlanta International,Atlanta,USA,33.6407,-84.4277,2025-07-13
+SFO,San Francisco International,San Francisco,USA,37.6213,-122.379,2025-07-13
+LAS,Harry Reid International,Las Vegas,USA,36.084,-115.1537,2025-07-13
+PHX,Phoenix Sky Harbor International,Phoenix,USA,33.4342,-112.0116,2025-07-13
+SEA,Seattle-Tacoma International,Seattle,USA,47.4502,-122.3088,2025-07-13
+MIA,Miami International,Miami,USA,25.7932,-80.2906,2025-07-13
+MCO,Orlando International,Orlando,USA,28.4294,-81.3089,2025-07-13
+EWR,Newark Liberty International,Newark,USA,40.6925,-74.1687,2025-07-13
+BOS,Logan International,Boston,USA,42.3656,-71.0096,2025-07-13
+LGA,LaGuardia Airport,New York,USA,40.7769,-73.874,2025-07-13
+LHR,Heathrow Airport,London,United Kingdom,51.47,-0.4543,2025-07-13
+CDG,Charles de Gaulle Airport,Paris,France,49.0097,2.5479,2025-07-13
+FRA,Frankfurt Airport,Frankfurt,Germany,50.0379,8.5622,2025-07-13
+AMS,Amsterdam Airport Schiphol,Amsterdam,Netherlands,52.3105,4.7683,2025-07-13
+MAD,Madrid-Barajas Airport,Madrid,Spain,40.4839,-3.568,2025-07-13
+FCO,Leonardo da Vinci International,Rome,Italy,41.8003,12.2389,2025-07-13
+MUC,Munich Airport,Munich,Germany,48.3537,11.775,2025-07-13
+ZUR,Zurich Airport,Zurich,Switzerland,47.4647,8.5492,2025-07-13
+VIE,Vienna International Airport,Vienna,Austria,48.1103,16.5697,2025-07-13
+BRU,Brussels Airport,Brussels,Belgium,50.901,4.4856,2025-07-13
+ARN,Stockholm Arlanda Airport,Stockholm,Sweden,59.6519,17.9186,2025-07-13
+CPH,Copenhagen Airport,Copenhagen,Denmark,55.618,12.6508,2025-07-13
+HEL,Helsinki Airport,Helsinki,Finland,60.3172,24.9633,2025-07-13
+OSL,Oslo Airport,Oslo,Norway,60.1939,11.1004,2025-07-13
+IST,Istanbul Airport,Istanbul,Turkey,41.2753,28.7519,2025-07-13
+NRT,Narita International Airport,Tokyo,Japan,35.772,140.3929,2025-07-13
+HND,Haneda Airport,Tokyo,Japan,35.5494,139.7798,2025-07-13
+ICN,Incheon International Airport,Seoul,South Korea,37.4602,126.4407,2025-07-13
+PEK,Beijing Capital International,Beijing,China,40.0799,116.6031,2025-07-13
+PVG,Shanghai Pudong International,Shanghai,China,31.1443,121.8083,2025-07-13
+HKG,Hong Kong International Airport,Hong Kong,China,22.308,113.9185,2025-07-13
+SIN,Singapore Changi Airport,Singapore,Singapore,1.3644,103.9915,2025-07-13
+KUL,Kuala Lumpur International,Kuala Lumpur,Malaysia,2.7456,101.7072,2025-07-13
+BKK,Suvarnabhumi Airport,Bangkok,Thailand,13.69,100.7501,2025-07-13
+CGK,Soekarno-Hatta International,Jakarta,Indonesia,-6.1275,106.6537,2025-07-13
+MNL,Ninoy Aquino International,Manila,Philippines,14.5086,121.0194,2025-07-13
+DEL,Indira Gandhi International,New Delhi,India,28.5665,77.1031,2025-07-13
+BOM,Chhatrapati Shivaji International,Mumbai,India,19.0896,72.8656,2025-07-13
+TPE,Taiwan Taoyuan International,Taipei,Taiwan,25.0797,121.2342,2025-07-13
+DXB,Dubai International Airport,Dubai,UAE,25.2532,55.3657,2025-07-13
+DOH,Hamad International Airport,Doha,Qatar,25.2731,51.608,2025-07-13
+AUH,Abu Dhabi International,Abu Dhabi,UAE,24.433,54.6511,2025-07-13
+RUH,King Khalid International,Riyadh,Saudi Arabia,24.9576,46.6988,2025-07-13
+JED,King Abdulaziz International,Jeddah,Saudi Arabia,21.6796,39.1565,2025-07-13
+TLV,Ben Gurion Airport,Tel Aviv,Israel,32.0114,34.8867,2025-07-13
+CAI,Cairo International Airport,Cairo,Egypt,30.1219,31.4056,2025-07-13
+AMM,Queen Alia International,Amman,Jordan,31.7226,35.9933,2025-07-13
+SYD,Sydney Kingsford Smith Airport,Sydney,Australia,-33.9399,151.1753,2025-07-13
+MEL,Melbourne Airport,Melbourne,Australia,-37.669,144.841,2025-07-13
+BNE,Brisbane Airport,Brisbane,Australia,-27.3942,153.1218,2025-07-13
+PER,Perth Airport,Perth,Australia,-31.9403,115.9669,2025-07-13
+AKL,Auckland Airport,Auckland,New Zealand,-37.0082,174.785,2025-07-13
+CHC,Christchurch Airport,Christchurch,New Zealand,-43.4894,172.532,2025-07-13
+YYZ,Toronto Pearson International,Toronto,Canada,43.6777,-79.6248,2025-07-13
+YVR,Vancouver International,Vancouver,Canada,49.1967,-123.1815,2025-07-13
+YUL,Montreal-Pierre Elliott Trudeau,Montreal,Canada,45.4577,-73.7497,2025-07-13
+YYC,Calgary International,Calgary,Canada,51.1315,-114.0106,2025-07-13
+YEG,Edmonton International,Edmonton,Canada,53.3097,-113.5801,2025-07-13
+GRU,São Paulo/Guarulhos International,São Paulo,Brazil,-23.4356,-46.4731,2025-07-13
+GIG,Rio de Janeiro/Galeão International,Rio de Janeiro,Brazil,-22.8099,-43.2505,2025-07-13
+EZE,Ezeiza International Airport,Buenos Aires,Argentina,-34.8222,-58.5358,2025-07-13
+SCL,Santiago International Airport,Santiago,Chile,-33.393,-70.7858,2025-07-13
+BOG,El Dorado International,Bogotá,Colombia,4.7016,-74.1469,2025-07-13
+LIM,Jorge Chávez International,Lima,Peru,-12.0219,-77.1143,2025-07-13
+UIO,Mariscal Sucre International,Quito,Ecuador,-0.1292,-78.3576,2025-07-13
+JNB,OR Tambo International,Johannesburg,South Africa,-26.1392,28.246,2025-07-13
+CPT,Cape Town International,Cape Town,South Africa,-33.9649,18.6017,2025-07-13
+ADD,Addis Ababa Bole International,Addis Ababa,Ethiopia,8.9806,38.7999,2025-07-13
+LOS,Murtala Muhammed International,Lagos,Nigeria,6.5774,3.3212,2025-07-13
+CMN,Mohammed V International,Casablanca,Morocco,33.3675,-7.5898,2025-07-13
+TUN,Tunis-Carthage International,Tunis,Tunisia,36.851,10.2272,2025-07-13
+MEX,Mexico City International,Mexico City,Mexico,19.4363,-99.0721,2025-07-13
+CUN,Cancún International,Cancún,Mexico,21.0365,-86.8771,2025-07-13
+GDL,Guadalajara International,Guadalajara,Mexico,20.5218,-103.3106,2025-07-13
+MTY,Monterrey International,Monterrey,Mexico,25.7785,-100.1077,2025-07-13
+PVR,Puerto Vallarta International,Puerto Vallarta,Mexico,20.6801,-105.2544,2025-07-13

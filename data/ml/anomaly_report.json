@@ -1,171 +1,171 @@
 {
-  "total_anomalies": 179,
+  "total_anomalies": 169,
   "anomalies_by_type": {
     "duration_anomaly": 0,
-    "scheduling_anomaly": 82,
-    "performance_anomaly": 97
+    "scheduling_anomaly": 77,
+    "performance_anomaly": 92
   },
   "anomalies": [
     {
       "type": "scheduling_anomaly",
-      "flight_number": "AF2620",
-      "airline": "AF",
-      "route": "ADZ -> CBQ",
-      "departure_hour": 13.0,
+      "flight_number": "ET8730",
+      "airline": "ET",
+      "route": "FTE -> SLL",
+      "departure_hour": 23.0,
       "severity": "low"
     },
     {
       "type": "scheduling_anomaly",
-      "flight_number": "KQ8586",
-      "airline": "KQ",
-      "route": "JFK -> TTU",
-      "departure_hour": 13.0,
+      "flight_number": "6E8631",
+      "airline": "6E",
+      "route": "HRG -> TLV",
+      "departure_hour": 23.0,
       "severity": "low"
     },
     {
       "type": "scheduling_anomaly",
-      "flight_number": "FR7377",
-      "airline": "FR",
-      "route": "BNE -> SSH",
-      "departure_hour": 13.0,
-      "severity": "low"
-    },
-    {
-      "type": "scheduling_anomaly",
-      "flight_number": "QR6443",
-      "airline": "QR",
-      "route": "ELG -> CTS",
-      "departure_hour": 13.0,
-      "severity": "low"
-    },
-    {
-      "type": "scheduling_anomaly",
-      "flight_number": "TD7843",
-      "airline": "TD",
-      "route": "DUD -> ELG",
-      "departure_hour": 13.0,
-      "severity": "low"
-    },
-    {
-      "type": "scheduling_anomaly",
-      "flight_number": "U23955",
-      "airline": "U2",
-      "route": "OSL -> SDU",
-      "departure_hour": 13.0,
-      "severity": "low"
-    },
-    {
-      "type": "scheduling_anomaly",
-      "flight_number": "SV3181",
+      "flight_number": "SV4834",
       "airline": "SV",
-      "route": "COK -> AYT",
-      "departure_hour": 13.0,
+      "route": "ELS -> PNQ",
+      "departure_hour": 23.0,
       "severity": "low"
     },
     {
       "type": "scheduling_anomaly",
-      "flight_number": "UU3658",
-      "airline": "UU",
-      "route": "AYT -> HRG",
-      "departure_hour": 13.0,
+      "flight_number": "TP6366",
+      "airline": "TP",
+      "route": "PPS -> YHZ",
+      "departure_hour": 23.0,
       "severity": "low"
     },
     {
       "type": "scheduling_anomaly",
-      "flight_number": "SA3022",
-      "airline": "SA",
-      "route": "AHB -> ATF",
-      "departure_hour": 13.0,
-      "severity": "low"
-    },
-    {
-      "type": "scheduling_anomaly",
-      "flight_number": "NZ6658",
-      "airline": "NZ",
-      "route": "AYT -> AHB",
-      "departure_hour": 13.0,
-      "severity": "low"
-    },
-    {
-      "type": "scheduling_anomaly",
-      "flight_number": "AI466",
+      "flight_number": "AI509",
       "airline": "AI",
-      "route": "DME -> ZQN",
-      "departure_hour": 13.0,
+      "route": "NQN -> TAG",
+      "departure_hour": 23.0,
       "severity": "low"
     },
     {
       "type": "scheduling_anomaly",
-      "flight_number": "PX1717",
-      "airline": "PX",
-      "route": "GRJ -> MZG",
-      "departure_hour": 13.0,
+      "flight_number": "IR2043",
+      "airline": "IR",
+      "route": "RMQ -> TRU",
+      "departure_hour": 23.0,
       "severity": "low"
     },
     {
       "type": "scheduling_anomaly",
-      "flight_number": "LX4206",
-      "airline": "LX",
-      "route": "YYC -> ILO",
-      "departure_hour": 13.0,
+      "flight_number": "VJ7985",
+      "airline": "VJ",
+      "route": "CHC -> SHC",
+      "departure_hour": 23.0,
       "severity": "low"
     },
     {
       "type": "scheduling_anomaly",
-      "flight_number": "SQ8338",
-      "airline": "SQ",
-      "route": "BNE -> TAB",
-      "departure_hour": 13.0,
+      "flight_number": "MP1504",
+      "airline": "MP",
+      "route": "FEZ -> DVO",
+      "departure_hour": 23.0,
       "severity": "low"
     },
     {
       "type": "scheduling_anomaly",
-      "flight_number": "VY2597",
-      "airline": "VY",
-      "route": "CCU -> YYZ",
-      "departure_hour": 13.0,
+      "flight_number": "KL3386",
+      "airline": "KL",
+      "route": "LIS -> PVG",
+      "departure_hour": 23.0,
       "severity": "low"
     },
     {
       "type": "scheduling_anomaly",
-      "flight_number": "CM8204",
-      "airline": "CM",
-      "route": "MEL -> CZM",
-      "departure_hour": 13.0,
+      "flight_number": "TT9811",
+      "airline": "TT",
+      "route": "YVR -> MQP",
+      "departure_hour": 23.0,
       "severity": "low"
     },
     {
       "type": "scheduling_anomaly",
-      "flight_number": "QZ7517",
-      "airline": "QZ",
-      "route": "WAW -> TTT",
-      "departure_hour": 13.0,
+      "flight_number": "NZ7858",
+      "airline": "NZ",
+      "route": "TTT -> KIX",
+      "departure_hour": 23.0,
       "severity": "low"
     },
     {
       "type": "scheduling_anomaly",
-      "flight_number": "XG8782",
-      "airline": "XG",
-      "route": "EJA -> MFK",
-      "departure_hour": 13.0,
+      "flight_number": "WF9901",
+      "airline": "WF",
+      "route": "TAB -> EIL",
+      "departure_hour": 23.0,
       "severity": "low"
     },
     {
       "type": "scheduling_anomaly",
-      "flight_number": "D85537",
-      "airline": "D8",
-      "route": "MFK -> MTZ",
-      "departure_hour": 13.0,
+      "flight_number": "OZ2939",
+      "airline": "OZ",
+      "route": "AHB -> PPS",
+      "departure_hour": 23.0,
       "severity": "low"
     },
     {
       "type": "scheduling_anomaly",
-      "flight_number": "LX9945",
-      "airline": "LX",
-      "route": "ETM -> GIG",
-      "departure_hour": 13.0,
+      "flight_number": "YM2704",
+      "airline": "YM",
+      "route": "SSH -> TIJ",
+      "departure_hour": 23.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "OK3838",
+      "airline": "OK",
+      "route": "YOW -> ILR",
+      "departure_hour": 23.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "JL6815",
+      "airline": "JL",
+      "route": "CPH -> CHM",
+      "departure_hour": 23.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "U21069",
+      "airline": "U2",
+      "route": "ARN -> CUN",
+      "departure_hour": 23.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "IC7351",
+      "airline": "IC",
+      "route": "AKR -> HMO",
+      "departure_hour": 23.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "HC7563",
+      "airline": "HC",
+      "route": "XMN -> FUK",
+      "departure_hour": 23.0,
+      "severity": "low"
+    },
+    {
+      "type": "scheduling_anomaly",
+      "flight_number": "SN7515",
+      "airline": "SN",
+      "route": "GZT -> AHB",
+      "departure_hour": 23.0,
       "severity": "low"
     }
   ],
-  "detection_timestamp": "2025-07-12T15:51:44.927477"
+  "detection_timestamp": "2025-07-13T00:20:19.781653"
 }
